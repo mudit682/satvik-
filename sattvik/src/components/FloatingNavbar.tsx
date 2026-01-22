@@ -31,8 +31,7 @@ export default function FloatingNavbar() {
   return (
     <>
       {/* Sticky Navbar */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
           // --- 
           // THIS IS THE FIX: 
           // Changed bg-white/80 to bg-white, removed backdrop-blur,
@@ -40,13 +39,13 @@ export default function FloatingNavbar() {
           // ---
           ? 'bg-white shadow-lg border-b border-gray-200'
           : 'bg-transparent'
-      }`}>
+        }`}>
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2">
-              <img 
-                src="/Logo Header.png" 
+              <img
+                src="/Logo_Header.png"
                 alt="Satvify Logo"
                 className="h-40 w-auto object-contain"
               />
