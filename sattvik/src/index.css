@@ -1,0 +1,13 @@
+/* This rule for your local font stays */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('/fonts/PlusJakartaSans.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ... rest of your file ... */
