@@ -17,7 +17,7 @@ const testimonials = [
   },
   {
     name: 'Ramesh Poonia',
-    image: '/person-foreground.png',
+    image: 'https://cdn.vectorstock.com/i/1000v/44/88/simple-male-avatar-icon-vector-58404488.jpg',
     text: 'I like your Garden Blossom Salad Bowl 🥗. It is in perfect quantity for one person. Packing also good.',
     rating: 5,
   },
@@ -30,7 +30,7 @@ const testimonials = [
   {
     name: 'Tania',
     // --- FIX: Updated image path to nodp.jpeg ---
-    image: '/Testimonials/nodp.jpeg',
+    image: 'https://i.fbcd.co/products/resized/resized-750-500/1806-m10-i002-n009-e14p-8bbc2507800e9178d5464d9cee53017a51fe88a31e1251c02165ab75b4e8d5ef.jpg',
     text: 'The salad was so fresh and delectable with the healthiest possible ingredients. really really loved it 💕 thank you so much',
     rating: 5,
   },
@@ -98,7 +98,7 @@ export default function Testimonials() {
           <p className="font-body text-xl text-papaya-100 max-w-4xl mx-auto leading-relaxed mb-8">
             Real stories from people transforming their health with <span className="font-semibold text-papaya-50">Satvify</span>.
           </p>
-          
+
           {/* Trust Statement */}
           <div className="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20 max-w-5xl mx-auto">
             <div className="flex items-center justify-center gap-4 mb-4">
@@ -107,7 +107,7 @@ export default function Testimonials() {
               <Quote className="w-8 h-8 text-white" />
             </div>
             <p className="font-body text-lg text-papaya-100 leading-relaxed">
-              These are real stories from real people who have made <span className="font-semibold text-papaya-50">Satvify</span> a part of their wellness journey. 
+              These are real stories from real people who have made <span className="font-semibold text-papaya-50">Satvify</span> a part of their wellness journey.
               Their words reflect the genuine impact of pure, Satvic nutrition on their lives.
             </p>
           </div>
@@ -180,9 +180,8 @@ export default function Testimonials() {
             <button
               key={idx}
               onClick={() => setCurrentIndex(idx)}
-              className={`h-3 rounded-full transition-all duration-300 ${
-                idx === currentIndex ? 'bg-white w-12' : 'bg-white/50 w-3'
-              }`}
+              className={`h-3 rounded-full transition-all duration-300 ${idx === currentIndex ? 'bg-white w-12' : 'bg-white/50 w-3'
+                }`}
               aria-label={`Go to testimonial ${idx + 1}`}
             />
           ))}
@@ -197,7 +196,7 @@ export default function Testimonials() {
             <div className="text-2xl font-heading font-bold text-calPoly-700 mb-1">4.9★</div>
             <div className="font-body text-calPoly-600">Average Rating</div>
           </div>
-          
+
           <div className="bg-papaya p-6 rounded-2xl shadow-lg text-center group hover:shadow-xl transition-all duration-300">
             <div className="w-12 h-12 bg-calPoly-700 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
               <Heart className="w-6 h-6 text-white" />
@@ -205,7 +204,7 @@ export default function Testimonials() {
             <div className="text-2xl font-heading font-bold text-calPoly-700 mb-1">500+</div>
             <div className="font-body text-calPoly-600">Happy Customers</div>
           </div>
-          
+
           <div className="bg-papaya p-6 rounded-2xl shadow-lg text-center group hover:shadow-xl transition-all duration-300">
             <div className="w-12 h-12 bg-calPoly-700 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
               <Sparkles className="w-6 h-6 text-white" />
@@ -213,7 +212,7 @@ export default function Testimonials() {
             <div className="text-2xl font-heading font-bold text-calPoly-700 mb-1">98%</div>
             <div className="font-body text-calPoly-600">Would Recommend</div>
           </div>
-          
+
           <div className="bg-papaya p-6 rounded-2xl shadow-lg text-center group hover:shadow-xl transition-all duration-300">
             <div className="w-12 h-12 bg-calPoly-700 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
               <Quote className="w-6 h-6 text-white" />

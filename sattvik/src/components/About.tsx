@@ -63,7 +63,7 @@ const values = [
 export default function About() {
   const [currentImage, setCurrentImage] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
-  
+
   const location = useLocation();
   const onAboutPage = location.pathname === '/about';
 
@@ -96,15 +96,14 @@ export default function About() {
   const prevImage = () => setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
 
   return (
-    <section 
-      id="about" 
-      className={`pt-0 pb-24 bg-gradient-to-b from-white via-white to-papaya-50 relative overflow-hidden ${
-        onAboutPage ? 'pt-32' : '-mt-32'
-      }`}
+    <section
+      id="about"
+      className={`pt-0 pb-24 bg-gradient-to-b from-white via-white to-papaya-50 relative overflow-hidden ${onAboutPage ? 'pt-32' : '-mt-32'
+        }`}
     >
       {/* Fade Gradient Overlay */}
-       <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-transparent via-white/80 to-white pointer-events-none z-5" />
-      
+      <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-transparent via-white/80 to-white pointer-events-none z-5" />
+
       {/* Background Elements */}
       <div className="absolute top-20 left-10 animate-float opacity-20">
         <div className="w-32 h-32 bg-gradient-to-br from-hunter-200/40 to-calPoly-300/30 rounded-full blur-3xl" />
@@ -113,11 +112,11 @@ export default function About() {
         <div className="w-40 h-40 bg-gradient-to-br from-citron-200/40 to-xanthous-300/30 rounded-full blur-3xl" />
       </div>
 
-       <div className="container mx-auto px-6 relative z-10">
-          {/* Spacer to add 1 line space before About heading */}
-          {/* This spacer is only needed if on the /about page */}
-          {onAboutPage && <div className="h-8"></div>}
-        
+      <div className="container mx-auto px-6 relative z-10">
+        {/* Spacer to add 1 line space before About heading */}
+        {/* This spacer is only needed if on the /about page */}
+        {onAboutPage && <div className="h-8"></div>}
+
         {/* Header Section */}
         <div className={`text-center mb-20 ${isVisible ? 'animate-fade-up' : 'opacity-0'}`}>
           {/* --- 
@@ -137,27 +136,23 @@ export default function About() {
           {/* Text Content */}
           <div className={`space-y-8 ${isVisible ? 'animate-slide-in-left' : 'opacity-0'}`}>
             <div className="space-y-6 font-body text-calPoly-600 text-lg leading-relaxed">
-              <div className="bg-white/60 backdrop-blur-sm p-6 rounded-2xl border border-white/50 shadow-lg">
+              <div className="bg-citron-50 backdrop-blur-sm p-6 rounded-2xl border border-citron-100 shadow-lg">
                 <p className="mb-4">
-                  Derived from the Sanskrit word <span className="italic font-medium text-hunter-600">"Satv"</span> meaning <span className="font-semibold text-hunter-600">purity</span> and <span className="italic font-medium text-hunter-600">"fy"</span> meaning <span className="font-semibold text-hunter-600">fulfillment</span>, Satvify embodies our commitment to satisfying hunger & taste buds, nourishing the body, and nurturing the soul with Satvic food.
+                  Derived from the Sanskrit word <span className="italic font-medium text-hunter-600">"Satv"</span> meaning <span className="font-semibold text-hunter-600">purity</span> and <span className="italic font-medium text-hunter-600">"fy"</span> meaning <span className="font-semibold text-hunter-600">fulfillment</span>, Satvify embodies our commitment to satisfying hunger & taste buds with Satvic food.
                 </p>
                 <p>
                   At Satvify, every meal is a promise of <span className="font-semibold text-hunter-600">farm-to-table freshness</span>. We believe food should heal, energize, and uplift, not just fill you up.
                 </p>
               </div>
-              
-              <div className="bg-white/60 backdrop-blur-sm p-6 rounded-2xl border border-white/50 shadow-lg">
+
+              <div className="bg-papaya box-shadow-xl p-6 rounded-2xl border border-papaya-200 shadow-lg">
                 <p>
                   Every recipe we create is rooted in Satvic principles: <span className="font-semibold text-hunter-600">fresh, plant-based, wholesome, and easy to digest</span>. With a deep respect for nature and balance, Satvify is here to help you "eat clean, live light, and feel alive."
                 </p>
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-hunter-50 to-calPoly-50 p-8 rounded-3xl border border-hunter-200/50">
-              <p className="text-2xl font-medium text-hunter-700 text-center">
-                <span className="text-xanthous-600 font-bold">"Nourishing Body, Nurturing Soul"</span>
-              </p>
-            </div>
+
           </div>
 
           {/* Image Carousel */}
@@ -168,9 +163,8 @@ export default function About() {
                   key={idx}
                   src={img}
                   alt={`Sattvik kitchen ${idx + 1}`}
-                  className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ${
-                    idx === currentImage ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
-                  }`}
+                  className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ${idx === currentImage ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
+                    }`}
                 />
               ))}
 
@@ -197,9 +191,8 @@ export default function About() {
                   <button
                     key={idx}
                     onClick={() => setCurrentImage(idx)}
-                    className={`h-2 rounded-full transition-all duration-300 ${
-                      idx === currentImage ? 'bg-white w-8' : 'bg-white/50 w-2'
-                    }`}
+                    className={`h-2 rounded-full transition-all duration-300 ${idx === currentImage ? 'bg-white w-8' : 'bg-white/50 w-2'
+                      }`}
                     aria-label={`Go to image ${idx + 1}`}
                   />
                 ))}

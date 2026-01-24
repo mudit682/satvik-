@@ -121,14 +121,13 @@ export default function Philosophy() {
               >
                 <div
                   className="relative h-96 cursor-pointer group perspective"
-                  onClick={() => toggleFlip(index)}
-                  onMouseEnter={() => toggleFlip(index)}
-                  onMouseLeave={() => setFlippedCards((prev) => prev.filter((i) => i !== index))}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toggleFlip(index);
+                  }}
                 >
                   <div
-                    className={`relative w-full h-full transition-transform duration-700 transform-style-3d ${isFlipped ? 'rotate-y-180' : ''
-                      }`}
-                    style={{ transformStyle: 'preserve-3d' }}
+                    className={`relative w-full h-full transition-transform duration-700 transform-style-3d ${isFlipped ? 'rotate-y-180' : ''}`}
                   >
                     {/* Front Card (Card is light, text is dark) */}
                     <div
@@ -151,7 +150,7 @@ export default function Philosophy() {
                       <p className="font-body text-calPoly-600 mb-4 leading-relaxed">
                         {philosophy.description}
                       </p>
-                      <div className="flex items-center gap-2 text-hunter-600 font-body font-semibold">
+                      <div className="flex items-center gap-2 text-hunter-600 font-body font-semibold hover:text-hunter-700 transition-colors">
                         <span>Learn More</span>
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </div>
@@ -160,7 +159,6 @@ export default function Philosophy() {
                     {/* Back Card (Card is light, text is dark) */}
                     <div
                       className={`absolute inset-0 ${philosophy.bgColor} rounded-3xl p-8 flex flex-col items-center justify-center text-center shadow-lg border-2 border-hunter-200 rotate-y-180 backface-hidden`}
-                      style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
                     >
                       {/* --- FIX: Icon box is now dark, icon is light --- */}
                       <div className={`w-20 h-20 rounded-2xl bg-calPoly-700 flex items-center justify-center mb-6 shadow-lg`}>

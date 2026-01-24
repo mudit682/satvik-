@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Send, Leaf, Heart } from 'lucide-react';
-import FaqAccordion from '../components/FaqAccordion'; 
+import FaqAccordion from '../components/FaqAccordion';
 
 // --- FAQ DATA ---
 const faqColumn1 = [
@@ -65,7 +65,7 @@ const faqColumn2 = [
   },
   {
     question: "Where does Satvify currently deliver, and what are the delivery charges?",
-    answer: "Satvify currently operates from our cloud kitchen in Malibu Towne, Gurgaon, delivering wholesome Satvic meals with care and convenience.\nMalibu Towne: Free delivery\nSector 46–50: ₹40 delivery charge\nBeyond this range: ₹40 + ₹5 per additional kilometre\nWe’re expanding gradually to serve more areas — bringing Satvic freshness closer to you, one neighbourhood at a time."
+    answer: "Satvify currently operates from our cloud kitchen in Malibu Town, Gurgaon, delivering wholesome Satvic meals with care and convenience.\nMalibu Town: Free delivery\nSector 46–50: ₹40 delivery charge\nBeyond this range: ₹40 + ₹5 per additional kilometre\nWe’re expanding gradually to serve more areas — bringing Satvic freshness closer to you, one neighbourhood at a time."
   }
 ];
 
@@ -87,8 +87,8 @@ export default function ContactPage() {
   return (
     <>
       <section className="pt-32 pb-24 bg-gradient-to-b from-white to-papaya-50 relative overflow-hidden">
-        <div className="absolute top-20 left-10 animate-float opacity-20">
-          <div className="w-40 h-40 bg-gradient-to-br from-hunter-200/40 to-calPoly-300/30 rounded-full blur-3xl" />
+        <div className="absolute top-10 md:top-20 left-4 md:left-10 animate-float opacity-20">
+          <div className="w-32 md:w-40 h-32 md:h-40 bg-gradient-to-br from-hunter-200/40 to-calPoly-300/30 rounded-full blur-3xl" />
         </div>
         <div className="absolute bottom-20 right-10 animate-float-delayed opacity-20">
           <div className="w-32 h-32 bg-gradient-to-br from-citron-200/40 to-xanthous-300/30 rounded-full blur-3xl" />
@@ -104,25 +104,25 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
             {/* Contact Info */}
-            <div className="bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-lg border border-white/50">
-              <h2 className="font-heading text-2xl font-bold text-calPoly-700 mb-6">We would love to hear from you</h2>
+            <div className="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-3xl shadow-lg border border-white/50">
+              <h2 className="font-heading text-2xl font-bold text-calPoly-700 mb-6 text-center lg:text-left">We would love to hear from you</h2>
               <div className="space-y-4 font-body text-calPoly-600">
                 {/* --- FIX: Updated Email --- */}
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 justify-center lg:justify-start">
                   <Mail className="w-5 h-5 text-hunter-600" />
                   <a href="mailto:namaste@satvify.in" className="hover:text-hunter-700">namaste@satvify.in</a>
                 </div>
                 {/* --- FIX: Updated Phone --- */}
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 justify-center lg:justify-start">
                   <Phone className="w-5 h-5 text-hunter-600" />
                   <a href="tel:+919667899233" className="hover:text-hunter-700">+91 96678 99233</a>
                 </div>
                 {/* --- FIX: Updated Address --- */}
-                <div className="flex items-start gap-3"> {/* Changed to items-start */}
+                <div className="flex items-start gap-3 justify-center lg:justify-start text-center lg:text-left"> {/* Changed to items-start */}
                   <MapPin className="w-5 h-5 text-hunter-600 mt-1 flex-shrink-0" /> {/* Added mt-1 */}
-                  <span>GS-29, Green Street, Malibu Towne, Sector 47, Gurgaon, Haryana - 122018, India</span>
+                  <span>GS- 29, Malibu Town, Sector 47, Gurgaon, Haryana 122018</span>
                 </div>
               </div>
 
@@ -134,32 +134,32 @@ export default function ContactPage() {
             </div>
 
             {/* Contact Form */}
-            <form onSubmit={handleSubmit} className="bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-lg border border-white/50">
-              <h2 className="font-heading text-2xl font-bold text-calPoly-700 mb-6">Send a Message</h2>
+            <form onSubmit={handleSubmit} className="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-3xl shadow-lg border border-white/50">
+              <h2 className="font-heading text-2xl font-bold text-calPoly-700 mb-6 text-center lg:text-left">Send a Message</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="flex flex-col">
-                  <label htmlFor="name" className="font-body text-sm text-calPoly-600 mb-2">Name</label>
-                  <input id="name" name="name" value={form.name} onChange={handleChange} required placeholder="Your full name" title="Your full name" className="border border-calPoly-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-hunter-300" />
+                  <label htmlFor="name" className="font-body text-sm text-calPoly-600 mb-2 text-center md:text-left">Name</label>
+                  <input id="name" name="name" value={form.name} onChange={handleChange} required placeholder="Your full name" title="Your full name" className="border border-calPoly-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-hunter-300 text-center md:text-left" />
                 </div>
                 <div className="flex flex-col">
-                  <label htmlFor="phone" className="font-body text-sm text-calPoly-600 mb-2">Phone No</label>
-                  <input id="phone" type="tel" name="phone" value={form.phone} onChange={handleChange} required placeholder="Your 10-digit number" title="Your phone number" className="border border-calPoly-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-hunter-300" />
+                  <label htmlFor="phone" className="font-body text-sm text-calPoly-600 mb-2 text-center md:text-left">Phone No</label>
+                  <input id="phone" type="tel" name="phone" value={form.phone} onChange={handleChange} required placeholder="Your 10-digit number" title="Your phone number" className="border border-calPoly-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-hunter-300 text-center md:text-left" />
                 </div>
               </div>
               <div className="flex flex-col mt-6">
-                <label htmlFor="message" className="font-body text-sm text-calPoly-600 mb-2">Message</label>
-                <textarea id="message" name="message" value={form.message} onChange={handleChange} required rows={6} placeholder="How can we help you?" title="Your message" className="border border-calPoly-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-hunter-300" />
+                <label htmlFor="message" className="font-body text-sm text-calPoly-600 mb-2 text-center md:text-left">Message</label>
+                <textarea id="message" name="message" value={form.message} onChange={handleChange} required rows={6} placeholder="How can we help you?" title="Your message" className="border border-calPoly-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-hunter-300 text-center md:text-left" />
               </div>
 
-              <div className="mt-8 flex items-center gap-4">
-                <button type="submit" className="inline-flex items-center gap-3 bg-gradient-to-r from-hunter-600 to-hunter-700 text-white font-body font-semibold text-lg px-8 py-4 rounded-full hover:from-hunter-700 hover:to-hunter-800 transition-all duration-300 hover:scale-105 shadow-lg">
+              <div className="mt-8 flex flex-col items-center lg:flex-row lg:items-center gap-4">
+                <button type="submit" className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-gradient-to-r from-hunter-600 to-hunter-700 text-white font-body font-semibold text-lg px-8 py-4 rounded-full hover:from-hunter-700 hover:to-hunter-800 transition-all duration-300 hover:scale-105 shadow-lg">
                   <span>Send Message</span>
                   <Send className="w-5 h-5" />
                 </button>
                 {submitted && (
-                  <div className="inline-flex items-center gap-2 text-hunter-700 font-body">
+                  <div className="inline-flex items-center justify-center gap-2 text-hunter-700 font-body text-center">
                     <Heart className="w-5 h-5" />
-                    <span>Thanks! We'll get back to you shortly.</span>
+                    <span>Thanks! We'll get back shortly.</span>
                   </div>
                 )}
               </div>

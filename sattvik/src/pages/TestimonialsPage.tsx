@@ -1,4 +1,5 @@
-import { Star, Quote, Heart, Users, Trophy, MessageSquare, Leaf } from 'lucide-react';
+import { useState, useRef } from 'react';
+import { Star, Quote, Heart, Users, Trophy, MessageSquare, Leaf, Send } from 'lucide-react';
 
 type Testimonial = {
   name: string;
@@ -17,7 +18,7 @@ const testimonials: Testimonial[] = [
     location: 'Gurgaon',
     quote: 'Quantity was appropriate and taste was so nice. It was good and sweetness was perfect. Overall food was good.',
     favorite: 'Satvic Thali',
-    image: 'https://randomuser.me/api/portraits/women/65.jpg',
+    image: '/Testimonials/manju.jpg',
     rating: 4.5,
     monthsWithUs: 2,
   },
@@ -35,7 +36,7 @@ const testimonials: Testimonial[] = [
     location: 'Gurgaon',
     quote: 'I like your Garden Blossom Salad Bowl 🥗. It is in perfect quantity for one person. Packing also good.',
     favorite: 'Garden Blossom Salad',
-    image: 'https://randomuser.me/api/portraits/men/32.jpg',
+    image: 'https://cdn.vectorstock.com/i/1000v/44/88/simple-male-avatar-icon-vector-58404488.jpg',
     rating: 5,
     monthsWithUs: 1,
   },
@@ -53,7 +54,7 @@ const testimonials: Testimonial[] = [
     location: 'Gurgaon',
     quote: 'The salad was so fresh and delectable with the healthiest possible ingredients. really really loved it 💕 thank you so much',
     favorite: 'Fresh Salad',
-    image: 'https://randomuser.me/api/portraits/women/44.jpg',
+    image: 'https://i.fbcd.co/products/resized/resized-750-500/1806-m10-i002-n009-e14p-8bbc2507800e9178d5464d9cee53017a51fe88a31e1251c02165ab75b4e8d5ef.jpg',
     rating: 5,
     monthsWithUs: 1,
   },
@@ -121,20 +122,53 @@ const testimonials: Testimonial[] = [
     monthsWithUs: 1,
   },
   {
-    name: 'Akansha Goel',
+    name: 'Akansha Gupta',
     location: 'Gurgaon',
     quote: 'It was quite chocolaty and yummy which is good for kids. Overall sweetness and calories count could be improved',
     favorite: 'Choco Loco Smoothie',
-    image: 'https://randomuser.me/api/portraits/women/68.jpg',
+    image: '/Testimonials/akansha.jpg',
     rating: 4,
     monthsWithUs: 1,
   },
 ];
 
 export default function TestimonialsPage() {
+  const [showForm, setShowForm] = useState(false);
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [reviewForm, setReviewForm] = useState({ name: '', rating: 5, quote: '', favorite: '' });
+  const formRef = useRef<HTMLDivElement>(null);
+
   const avgRating = (
     testimonials.reduce((sum, t) => sum + t.rating, 0) / testimonials.length
   ).toFixed(1);
+
+  const handleWriteReview = () => {
+    setShowForm(true);
+    setTimeout(() => {
+      formRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  };
+
+  const handleRatingClick = (rating: number) => {
+    setReviewForm(prev => ({ ...prev, rating }));
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setReviewForm(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Simulate API call
+    console.log('Submitted Review:', reviewForm);
+    setFormSubmitted(true);
+    setReviewForm({ name: '', rating: 5, quote: '', favorite: '' });
+    setTimeout(() => {
+      setFormSubmitted(false);
+      setShowForm(false);
+    }, 5000);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-papaya-50">
@@ -236,13 +270,118 @@ export default function TestimonialsPage() {
             <p className="font-body text-lg text-calPoly-600 mb-6 leading-relaxed">
               Your journey inspires others to choose purity and presence. Tell us how clean eating changed your day.
             </p>
-            <button className="inline-flex items-center gap-3 bg-gradient-to-r from-hunter-600 to-hunter-700 text-white font-body font-semibold text-lg px-8 py-4 rounded-full hover:from-hunter-700 hover:to-hunter-800 transition-all duration-300 hover:scale-105 shadow-lg">
+            <button
+              onClick={handleWriteReview}
+              className="inline-flex items-center gap-3 bg-gradient-to-r from-hunter-600 to-hunter-700 text-white font-body font-semibold text-lg px-8 py-4 rounded-full hover:from-hunter-700 hover:to-hunter-800 transition-all duration-300 hover:scale-105 shadow-lg"
+            >
               <span>Write a Review</span>
               <Heart className="w-5 h-5" />
             </button>
           </div>
         </div>
       </section>
+
+      {/* Review Form Section */}
+      {showForm && (
+        <section ref={formRef} className="py-16 bg-white animate-fade-up">
+          <div className="container mx-auto px-6 max-w-2xl">
+            <div className="bg-papaya p-8 md:p-12 rounded-3xl shadow-2xl border border-hunter-100">
+              <div className="text-center mb-10">
+                <h3 className="font-heading text-3xl font-bold text-calPoly-700 mb-2">Write Your Review</h3>
+                <p className="font-body text-calPoly-600">How was your Satvify experience?</p>
+              </div>
+
+              {formSubmitted ? (
+                <div className="text-center py-10 animate-scale-in">
+                  <div className="w-20 h-20 bg-hunter-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Heart className="w-10 h-10 text-hunter-600 animate-pulse" />
+                  </div>
+                  <h4 className="font-heading text-2xl font-bold text-calPoly-700 mb-4">Thank You!</h4>
+                  <p className="font-body text-calPoly-600">Your review has been submitted for verification.</p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  {/* Rating Selector */}
+                  <div className="flex flex-col items-center gap-2 mb-6">
+                    <label className="font-body text-sm font-semibold text-calPoly-700">Rating</label>
+                    <div className="flex gap-2">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <button
+                          key={star}
+                          type="button"
+                          onClick={() => handleRatingClick(star)}
+                          className="focus:outline-none transition-transform hover:scale-110"
+                        >
+                          <Star
+                            className={`w-8 h-8 ${star <= reviewForm.rating ? 'fill-xanthous-500 text-xanthous-500' : 'text-hunter-200'}`}
+                          />
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="flex flex-col">
+                      <label htmlFor="rev-name" className="font-body text-sm text-calPoly-600 mb-2">Name</label>
+                      <input
+                        id="rev-name"
+                        name="name"
+                        value={reviewForm.name}
+                        onChange={handleInputChange}
+                        required
+                        placeholder="Your name"
+                        className="border border-hunter-100 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-hunter-300 bg-white"
+                      />
+                    </div>
+                    <div className="flex flex-col">
+                      <label htmlFor="rev-fav" className="font-body text-sm text-calPoly-600 mb-2">Favorite Dish</label>
+                      <input
+                        id="rev-fav"
+                        name="favorite"
+                        value={reviewForm.favorite}
+                        onChange={handleInputChange}
+                        placeholder="e.g. Satvic Thali"
+                        className="border border-hunter-100 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-hunter-300 bg-white"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col">
+                    <label htmlFor="rev-quote" className="font-body text-sm text-calPoly-600 mb-2">Your Review</label>
+                    <textarea
+                      id="rev-quote"
+                      name="quote"
+                      value={reviewForm.quote}
+                      onChange={handleInputChange}
+                      required
+                      rows={4}
+                      placeholder="Share your experience..."
+                      className="border border-hunter-100 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-hunter-300 bg-white"
+                    />
+                  </div>
+
+                  <div className="flex items-center gap-4 pt-4">
+                    <button
+                      type="submit"
+                      className="flex-1 inline-flex items-center justify-center gap-3 bg-gradient-to-r from-hunter-600 to-hunter-700 text-white font-body font-semibold text-lg px-8 py-4 rounded-full hover:from-hunter-700 hover:to-hunter-800 transition-all duration-300 hover:scale-105 shadow-lg"
+                    >
+                      <span>Submit Review</span>
+                      <Send className="w-5 h-5" />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setShowForm(false)}
+                      className="px-8 py-4 rounded-full border border-hunter-200 text-hunter-600 hover:bg-hunter-50 transition-all"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </form>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
     </div>
   );
 }

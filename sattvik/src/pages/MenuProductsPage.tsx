@@ -3,115 +3,402 @@ import { ShoppingCart, Flame, Clock, Star, Filter, Search, Leaf, Heart, Sparkles
 
 // Menu items array (sweets)
 const menuItems = [
+  // --- SALADS ---
   {
-    name: 'Bliss Balls',
-    description: 'A colorful medley of quinoa, roasted vegetables, avocado, and tahini dressing. Pure nourishment in every spoonful.',
-    calories: 420,
-    price: '₹49',
-    image: 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=600',
-    prepTime: '15 min',
-    rating: 4.9,
-    category: 'Desserts',
-    ingredients: ['Quinoa', 'Avocado', 'Tahini', 'Fresh Vegetables'],
-    benefits: ['High Protein', 'Rich in Fiber', 'Antioxidants'],
+    name: 'Garden Blossom Salad',
+    description: 'A vibrant garden medley with fresh greens, in-house peanut curd dressing and protein-rich sprouts.',
+    calories: 220,
+    price: '₹99',
+    image: '/menu images/menu IMG/menu2/Garden Blossom Salad.jpg',
+    prepTime: '12 min',
+    rating: 5.0,
+    category: 'Salads',
+    ingredients: ['Fresh Greens', 'Edible Flowers', 'Citrus Honey', 'Cucumber'],
+    benefits: ['Hydrating', 'Skin Glow', 'Vitamins'],
     isVegan: true,
     isGlutenFree: true
   },
   {
-    name: 'Coco - Nutty Laddoo',
-    description: 'Traditional comfort food reimagined with mung dal, brown rice, turmeric, and healing spices.',
-    calories: 350,
+    name: 'Exotic Cheesy Salad',
+    description: 'Crispy seasonal vegetables tossed with plant-based "cheese" and herb-infused oil.',
+    calories: 280,
+    price: '₹99',
+    image: '/menu images/menu IMG/menu2/Exotic Cheesy Salad.jpg',
+    prepTime: '15 min',
+    rating: 4.8,
+    category: 'Salads',
+    ingredients: ['Bell Peppers', 'Vegan Cheese', 'Herb Oil', 'Cherry Tomatoes'],
+    benefits: ['High Fiber', 'Antioxidants', 'Satisfying'],
+    isVegan: true,
+    isGlutenFree: true
+  },
+  {
+    name: 'Thai Papaya Zest',
+    description: 'A zesty Thai-inspired salad with raw papaya, peanuts, and a tangy tamarind dressing.',
+    calories: 190,
+    price: '₹89',
+    image: '/menu images/menu IMG/menu2/Thai Papaya Zest.jpg',
+    prepTime: '10 min',
+    rating: 4.7,
+    category: 'Salads',
+    ingredients: ['Raw Papaya', 'Peanuts', 'Tamarind', 'Chili'],
+    benefits: ['Digestion', 'Immunity', 'Low Calorie'],
+    isVegan: true,
+    isGlutenFree: true
+  },
+  {
+    name: 'Sunshine Carrot Crunch',
+    description: 'Grated carrots, raisins, and walnuts with a hint of lemon and black pepper.',
+    calories: 150,
+    price: '₹79',
+    image: '/menu images/menu IMG/menu2/Sunshine Carrot Crunch.jpg',
+    prepTime: '8 min',
+    rating: 4.6,
+    category: 'Salads',
+    ingredients: ['Carrots', 'Walnuts', 'Raisins', 'Lemon'],
+    benefits: ['Eye Health', 'Energy Boost', 'Raw Power'],
+    isVegan: true,
+    isGlutenFree: true
+  },
+  {
+    name: 'Cauli-fornia Dreamin',
+    description: 'Roasted cauliflower florets with tahini drizzle and pomegranate pearls.',
+    calories: 210,
+    price: '₹89',
+    image: '/menu images/menu IMG/menu2/Cauli-fornia Dreamin.jpeg.jpg',
+    prepTime: '18 min',
+    rating: 4.9,
+    category: 'Salads',
+    ingredients: ['Cauliflower', 'Tahini', 'Pomegranate', 'Cumin'],
+    benefits: ['Detox', 'Heart Health', 'Manganese'],
+    isVegan: true,
+    isGlutenFree: true
+  },
+
+  // --- SMOOTHIES & BOWLS ---
+  {
+    name: 'Jau-Dropping Bowl',
+    description: 'Wholesome roasted barley (Jau) mixed with seasonal fruits and nut butter.',
+    calories: 380,
+    price: '₹89',
+    image: '/menu images/menu IMG/menu2/Jau-Dropping Bowl.jpg',
+    prepTime: '10 min',
+    rating: 4.9,
+    category: 'Smoothies',
+    ingredients: ['Barley', 'Nut Butter', 'Seasonal Fruit', 'Honey'],
+    benefits: ['Slow Energy', 'Fiber Rich', 'Weight Management'],
+    isVegan: false,
+    isGlutenFree: false
+  },
+  {
+    name: 'Protein Punch Bowl',
+    description: 'A power-packed bowl with sattu, sprouts, nuts, and a touch of organic jaggery.',
+    calories: 450,
+    price: '₹99',
+    image: '/menu images/menu IMG/menu2/Protein Punch Bowl.jpg',
+    prepTime: '12 min',
+    rating: 5.0,
+    category: 'Smoothies',
+    ingredients: ['Sattu', 'Sprouts', 'Nuts', 'Jaggery'],
+    benefits: ['Muscle Recovery', 'Sustained Energy', 'High Protein'],
+    isVegan: true,
+    isGlutenFree: true
+  },
+  {
+    name: 'Banana Bliss Shake',
+    description: 'Creamy banana blend with almond milk, dates, and a sprinkle of cinnamon.',
+    calories: 310,
+    price: '₹79',
+    image: '/menu images/menu IMG/menu2/Banana Bliss Shake.jpg',
+    prepTime: '5 min',
+    rating: 4.8,
+    category: 'Smoothies',
+    ingredients: ['Banana', 'Almond Milk', 'Dates', 'Cinnamon'],
+    benefits: ['Hydration', 'Potassium', 'Naturally Sweet'],
+    isVegan: true,
+    isGlutenFree: true
+  },
+  {
+    name: 'Earthy Creamy Bowl',
+    description: 'A comforting blend of oats, chia, and coconut cream topped with berries.',
+    calories: 340,
+    price: '₹89',
+    image: '/menu images/menu IMG/menu2/Earthy Creamy Bowl.jpg',
+    prepTime: '15 min',
+    rating: 4.7,
+    category: 'Smoothies',
+    ingredients: ['Oats', 'Chia Seeds', 'Coconut Cream', 'Berries'],
+    benefits: ['Brain Health', 'Omegas', 'Fiber'],
+    isVegan: true,
+    isGlutenFree: true
+  },
+  {
+    name: 'Popeye_s Paradise',
+    description: 'Green superbowl with spinach, green apple, and protein-rich tofu cubes.',
+    calories: 260,
+    price: '₹99',
+    image: '/menu images/menu IMG/menu2/Popeye_s Paradise.jpg',
+    prepTime: '10 min',
+    rating: 4.8,
+    category: 'Smoothies',
+    ingredients: ['Spinach', 'Green Apple', 'Tofu', 'Lemon'],
+    benefits: ['Iron Rich', 'Vitamin K', 'Light & Filling'],
+    isVegan: true,
+    isGlutenFree: true
+  },
+
+  // --- DRINKS ---
+  {
+    name: 'Green Glow Elixir',
+    description: 'Refreshing cold-pressed juice with cucumber, mint, and a hint of ginger.',
+    calories: 45,
     price: '₹49',
-    image: 'https://images.pexels.com/photos/1092730/pexels-photo-1092730.jpeg?auto=compress&cs=tinysrgb&w=600',
-    prepTime: '20 min',
+    image: '/menu images/menu IMG/menu2/Green Glow Elixir.jpg',
+    prepTime: '5 min',
+    rating: 4.9,
+    category: 'Drinks',
+    ingredients: ['Cucumber', 'Mint', 'Ginger', 'Lemon'],
+    benefits: ['Detox', 'Electrolytes', 'Skin Health'],
+    isVegan: true,
+    isGlutenFree: true
+  },
+  {
+    name: 'App-solutely Beety Carroty',
+    description: 'Vibrant blend of apple, beetroot, and carrot for the ultimate morning boost.',
+    calories: 90,
+    price: '₹59',
+    image: '/menu images/menu IMG/menu2/App-solutely Beety Carroty.jpg',
+    prepTime: '5 min',
+    rating: 4.7,
+    category: 'Drinks',
+    ingredients: ['Apple', 'Beetroot', 'Carrot'],
+    benefits: ['Blood Flow', 'Energy', 'Immunity'],
+    isVegan: true,
+    isGlutenFree: true
+  },
+  {
+    name: 'Khaas Coconut Chaas',
+    description: 'Traditional spiced buttermilk alternative made with fresh coconut milk.',
+    calories: 120,
+    price: '₹49',
+    image: '/menu images/menu IMG/menu2/Khaas Coconut Chaas.jpg',
+    prepTime: '5 min',
+    rating: 4.8,
+    category: 'Drinks',
+    ingredients: ['Coconut Milk', 'Jeera', 'Curry Leaves', 'Pink Salt'],
+    benefits: ['Cooling', 'Digestion', 'Weight Lite'],
+    isVegan: true,
+    isGlutenFree: true
+  },
+  {
+    name: 'Crystal Ash Cooler',
+    description: 'Unique cooling drink made from Ash Gourd (Petha) juice with a touch of mint.',
+    calories: 30,
+    price: '₹49',
+    image: '/menu images/menu IMG/menu2/Crystal Ash Cooler.jpg',
+    prepTime: '5 min',
+    rating: 4.6,
+    category: 'Drinks',
+    ingredients: ['Ash Gourd', 'Mint', 'Pink Salt'],
+    benefits: ['Weight Loss', 'Alkalizing', 'Cooling'],
+    isVegan: true,
+    isGlutenFree: true
+  },
+  {
+    name: 'Tropical Bliss',
+    description: 'Pure coconut water infused with the sweetness of fresh pineapple and a hint of mint.',
+    calories: 120,
+    price: '₹59',
+    image: '/menu images/menu IMG/menu2/Crystal Ash Cooler.jpg', // Placeholder image
+    prepTime: '5 min',
+    rating: 4.8,
+    category: 'Drinks',
+    ingredients: ['Coconut Water', 'Pineapple', 'Mint'],
+    benefits: ['Hydrating', 'Refreshing', 'Pure Energy'],
+    isVegan: true,
+    isGlutenFree: true
+  },
+
+  // --- DESSERTS & SWEETS ---
+  {
+    name: 'Bliss Balls',
+    description: 'Power-packed energy bites with dates, almonds, and raw cacao.',
+    calories: 120,
+    price: '₹49',
+    image: '/menu images/menu IMG/menu images/blissballs.png',
+    prepTime: '5 min',
+    rating: 4.9,
+    category: 'Desserts',
+    ingredients: ['Dates', 'Almonds', 'Cacao', 'Coconut'],
+    benefits: ['Natural Energy', 'Healthy Fats', 'Sugar Free'],
+    isVegan: true,
+    isGlutenFree: true
+  },
+  {
+    name: 'Coco Nutty Laddoo',
+    description: 'Traditional sweet reimaged with coconut, nuts, and natural sweeteners.',
+    calories: 140,
+    price: '₹49',
+    image: '/menu images/menu IMG/menu images/choconuttyladoo.png',
+    prepTime: '5 min',
     rating: 4.8,
     category: 'Desserts',
-    ingredients: ['Mung Dal', 'Brown Rice', 'Turmeric', 'Healing Spices'],
-    benefits: ['Digestive Health', 'Complete Protein', 'Anti-inflammatory'],
+    ingredients: ['Coconut', 'Cashews', 'Almonds', 'Jaggery'],
+    benefits: ['Antioxidants', 'Healthy Fats', 'Fiber'],
     isVegan: true,
     isGlutenFree: true
   },
   {
     name: 'Trinut Til Bites',
-    description: 'Fresh cucumber, celery, spinach, green apple, ginger, and lemon. Alkalize and energize.',
-    calories: 120,
+    description: 'Crunchy snack bars with three types of nuts and nutrient-rich sesame seeds.',
+    calories: 130,
     price: '₹39',
-    image: 'https://images.pexels.com/photos/1435904/pexels-photo-1435904.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/menu images/menu IMG/menu images/trinuttilbites.png',
     prepTime: '5 min',
     rating: 4.7,
     category: 'Desserts',
-    ingredients: ['Cucumber', 'Celery', 'Spinach', 'Green Apple', 'Ginger'],
-    benefits: ['Hydrating', 'Detoxifying', 'Alkalizing'],
+    ingredients: ['Sesame Seeds', 'Cashews', 'Almonds', 'Walnuts'],
+    benefits: ['Omega-3', 'Mineral Rich', 'Crunchy'],
     isVegan: true,
     isGlutenFree: true
   },
   {
     name: 'Choco Truffle Eclairs',
-    description: 'Sweet potato, chickpeas, kale, beets, and hummus. A symphony of flavors and nutrients.',
-    calories: 480,
+    description: 'Guilt-free chocolate eclairs made with dates and cocoa butter.',
+    calories: 150,
     price: '₹69',
-    image: 'https://images.pexels.com/photos/1640770/pexels-photo-1640770.jpeg?auto=compress&cs=tinysrgb&w=600',
-    prepTime: '18 min',
+    image: '/menu images/menu IMG/menu images/chocotruffleeclairs.png',
+    prepTime: '10 min',
     rating: 4.9,
     category: 'Desserts',
-    ingredients: ['Sweet Potato', 'Chickpeas', 'Kale', 'Beets', 'Hummus'],
-    benefits: ['Complete Nutrition', 'Plant Protein', 'Vitamins & Minerals'],
+    ingredients: ['Dates', 'Cocoa Butter', 'Vanilla', 'Almonds'],
+    benefits: ['Antioxidants', 'Heart Healthy', 'Sweet Tooth Fix'],
     isVegan: true,
     isGlutenFree: true
   },
   {
     name: 'Protein Peda',
-    description: 'Seasonal fruits arranged with coconut yogurt, chia seeds, and raw honey. Nature\'s candy.',
-    calories: 280,
+    description: 'Handcrafted protein-rich sweet with nuts and sattu.',
+    calories: 110,
     price: '₹29',
-    image: 'https://images.pexels.com/photos/1132047/pexels-photo-1132047.jpeg?auto=compress&cs=tinysrgb&w=600',
-    prepTime: '10 min',
+    image: '/menu images/menu IMG/menu images/proteinpeda.png',
+    prepTime: '5 min',
     rating: 4.8,
     category: 'Desserts',
-    ingredients: ['Seasonal Fruits', 'Coconut Yogurt', 'Chia Seeds', 'Raw Honey'],
-    benefits: ['Natural Sugars', 'Probiotics', 'Omega-3'],
+    ingredients: ['Nut Powder', 'Sattu', 'Cardamom', 'Jaggery'],
+    benefits: ['B-Vitamins', 'Slow Carbs', 'Protein'],
     isVegan: true,
     isGlutenFree: true
   },
   {
     name: 'Royal Kaju Katli',
-    description: 'Handcrafted blend of tulsi, ashwagandha, ginger, and turmeric. Warmth and healing in a cup.',
-    calories: 15,
+    description: 'Thin slices of handcrafted cashew goodness with zero refined sugar.',
+    calories: 140,
     price: '₹39',
-    image: 'https://images.pexels.com/photos/1638280/pexels-photo-1638280.jpeg?auto=compress&cs=tinysrgb&w=600',
-    prepTime: '8 min',
-    rating: 4.6,
+    image: '/menu images/menu IMG/menu images/royalkajukatli.png',
+    prepTime: '10 min',
+    rating: 4.9,
     category: 'Desserts',
-    ingredients: ['Tulsi', 'Ashwagandha', 'Ginger', 'Turmeric'],
-    benefits: ['Stress Relief', 'Immune Support', 'Anti-inflammatory'],
+    ingredients: ['Cashews', 'Dates', 'Saffron'],
+    benefits: ['Healthy Fats', 'Traditional', 'Sugar Free'],
     isVegan: true,
     isGlutenFree: true
   },
   {
     name: 'Shahi Anjeer Roll',
-    description: 'Fresh sprouted moong beans with cucumber, tomatoes, and lemon dressing. Light and energizing.',
-    calories: 180,
+    description: 'Luxurious rolls made with premium figs and various nuts.',
+    calories: 150,
     price: '₹39',
-    image: 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=600',
-    prepTime: '12 min',
-    rating: 4.5,
+    image: '/menu images/menu IMG/menu images/shahianjeerrolls.png',
+    prepTime: '10 min',
+    rating: 4.8,
     category: 'Desserts',
-    ingredients: ['Sprouted Moong', 'Cucumber', 'Tomatoes', 'Lemon'],
-    benefits: ['Live Enzymes', 'Protein Rich', 'Digestive'],
+    ingredients: ['Figs (Anjeer)', 'Pista', 'Badam', 'Walnut'],
+    benefits: ['Iron Rich', 'Traditional', 'Fiber'],
     isVegan: true,
     isGlutenFree: true
   },
   {
     name: 'Date Chocolate Barks',
-    description: 'Creamy coconut curry with seasonal vegetables and brown rice. Comforting and nourishing.',
-    calories: 420,
+    description: 'Dark, rich chocolate barks sweetened with dates and loaded with seeds.',
+    calories: 130,
     price: '₹39',
-    image: 'https://images.pexels.com/photos/1092730/pexels-photo-1092730.jpeg?auto=compress&cs=tinysrgb&w=600',
-    prepTime: '25 min',
+    image: '/menu images/menu IMG/menu images/datechocolatebarks.png',
+    prepTime: '5 min',
+    rating: 4.9,
+    category: 'Desserts',
+    ingredients: ['Dark Cacao', 'Dates', 'Melon Seeds', 'Almonds'],
+    benefits: ['Brain Boost', 'Zinc', 'Guilt-Free'],
+    isVegan: true,
+    isGlutenFree: true
+  },
+  {
+    name: 'Chia-licious Pudding',
+    description: 'Creamy coconut-chia pudding layered with seasonal fruit purees.',
+    calories: 180,
+    price: '₹79',
+    image: '/menu images/menu IMG/menu2/Chia-licious Pudding.jpg',
+    prepTime: '10 min',
     rating: 4.7,
     category: 'Desserts',
-    ingredients: ['Coconut Milk', 'Seasonal Vegetables', 'Brown Rice', 'Curry Spices'],
-    benefits: ['Healthy Fats', 'Antioxidants', 'Satisfying'],
+    ingredients: ['Chia Seeds', 'Coconut Milk', 'Berries', 'Honey'],
+    benefits: ['Omegas', 'Skin Health', 'Fullness'],
+    isVegan: false,
+    isGlutenFree: true
+  },
+  {
+    name: 'Choco Loco Carnival',
+    description: 'A decadent chocolate dessert bowl with roasted nuts and date caramel.',
+    calories: 290,
+    price: '₹89',
+    image: '/menu images/menu IMG/menu2/Choco Loco Carnival.jpg',
+    prepTime: '12 min',
+    rating: 4.9,
+    category: 'Desserts',
+    ingredients: ['Cacao', 'Dates', 'Nuts', 'Banana'],
+    benefits: ['Mood Lifter', 'Antioxidants', 'Healthy Sweet'],
+    isVegan: true,
+    isGlutenFree: true
+  },
+  {
+    name: 'Kesar-e-Pista Bowl',
+    description: 'A royal saffron and pistachio infused thick creamy dessert.',
+    calories: 240,
+    price: '₹99',
+    image: '/menu images/menu IMG/menu2/Kesar-e-Pista Bowl.jpg',
+    prepTime: '15 min',
+    rating: 5.0,
+    category: 'Desserts',
+    ingredients: ['Saffron (Kesar)', 'Pistachio', 'Coconut Cream', 'Dates'],
+    benefits: ['Heart Health', 'Iron', 'Luxury Experience'],
+    isVegan: true,
+    isGlutenFree: true
+  },
+  {
+    name: 'The Sweet Beet Treat',
+    description: 'Naturally sweet beetroot halwa made with cashews and organic jaggery.',
+    calories: 210,
+    price: '₹69',
+    image: '/menu images/menu IMG/menu2/The Sweet Beet Treat.jpg',
+    prepTime: '20 min',
+    rating: 4.6,
+    category: 'Desserts',
+    ingredients: ['Beetroot', 'Cashews', 'Jaggery', 'Coconut Milk'],
+    benefits: ['Iron Boost', 'Liver Detox', 'Rich Taste'],
+    isVegan: true,
+    isGlutenFree: true
+  },
+  {
+    name: 'Caramello Nutty Punch',
+    description: 'A nutty smoothie with a natural date-based caramel twist.',
+    calories: 320,
+    price: '₹89',
+    image: '/menu images/menu IMG/menu2/Caramello Nutty Punch.jpg',
+    prepTime: '8 min',
+    rating: 4.8,
+    category: 'Smoothies',
+    ingredients: ['Almond Butter', 'Dates', 'Nuts', 'Sea Salt'],
+    benefits: ['Energy Rush', 'Proteins', 'Satisfying'],
     isVegan: true,
     isGlutenFree: true
   }
@@ -128,7 +415,7 @@ export default function MenuProductsPage() {
     .filter(item => {
       const matchesCategory = selectedCategory === 'All' || item.category === selectedCategory;
       const matchesSearch = item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           item.description.toLowerCase().includes(searchTerm.toLowerCase());
+        item.description.toLowerCase().includes(searchTerm.toLowerCase());
       return matchesCategory && matchesSearch;
     })
     .sort((a, b) => {
@@ -168,9 +455,9 @@ export default function MenuProductsPage() {
             <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-calPoly-700 mb-6 leading-tight">
               Menu
             </h1>
-            
+
             <p className="font-body text-xl text-calPoly-600 max-w-4xl mx-auto leading-relaxed">
-              Every dish is crafted with <span className="font-semibold text-hunter-600">intention</span> and <span className="font-semibold text-hunter-600">love</span>, 
+              Every dish is crafted with <span className="font-semibold text-hunter-600">intention</span> and <span className="font-semibold text-hunter-600">love</span>,
               using only the purest ingredients to create meals that heal, energize, and bring joy to your daily nourishment journey.
             </p>
           </div>
@@ -186,7 +473,7 @@ export default function MenuProductsPage() {
               <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-calPoly-400" />
               <input
                 type="text"
-                placeholder="Search dishes..."
+                placeholder='Search for "Choco Loco Carnival" or "Exotic Cheesy Salad"'
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full pl-12 pr-4 py-3 border border-calPoly-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-hunter-300 bg-white/80 backdrop-blur-sm"
@@ -199,11 +486,10 @@ export default function MenuProductsPage() {
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(category)}
-                  className={`px-6 py-3 rounded-full font-body font-semibold transition-all duration-300 ${
-                    selectedCategory === category
-                      ? 'bg-hunter-600 text-white shadow-lg'
-                      : 'bg-white/80 text-calPoly-600 hover:bg-hunter-50 hover:text-hunter-700 border border-hunter-200'
-                  }`}
+                  className={`px-6 py-3 rounded-full font-body font-semibold transition-all duration-300 ${selectedCategory === category
+                    ? 'bg-hunter-600 text-white shadow-lg'
+                    : 'bg-white/80 text-calPoly-600 hover:bg-hunter-50 hover:text-hunter-700 border border-hunter-200'
+                    }`}
                 >
                   {category}
                 </button>
@@ -246,7 +532,7 @@ export default function MenuProductsPage() {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-hunter-600/60 via-transparent to-transparent" />
-                  
+
                 </div>
 
                 {/* Content Section */}
@@ -301,7 +587,10 @@ export default function MenuProductsPage() {
                 Experience the transformative power of pure, plant-based nutrition crafted with love and intention.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="inline-flex items-center gap-3 bg-papaya text-calPoly-700 font-body font-semibold text-lg px-8 py-4 rounded-full hover:bg-papaya-100 transition-all duration-300 hover:scale-105 shadow-lg">
+                <button
+                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                  className="inline-flex items-center gap-3 bg-papaya text-calPoly-700 font-body font-semibold text-lg px-8 py-4 rounded-full hover:bg-papaya-100 transition-all duration-300 hover:scale-105 shadow-lg"
+                >
                   <span>Start Your Journey</span>
                   <ArrowRight className="w-5 h-5" />
                 </button>

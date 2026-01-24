@@ -36,9 +36,9 @@ const WhatWeDo: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
 
   const images = [
-    '/Img/20251019_152748.jpg.jpeg',
-    '/Img/20251017_174307.jpg',
-    '/Img/20251017_173749.jpg'
+    'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800',
+    'https://images.pexels.com/photos/1092730/pexels-photo-1092730.jpeg?auto=compress&cs=tinysrgb&w=800',
+    'https://images.pexels.com/photos/1640770/pexels-photo-1640770.jpeg?auto=compress&cs=tinysrgb&w=800'
   ];
 
   const handleImageClick = () => {
@@ -84,7 +84,7 @@ const WhatWeDo: React.FC = () => {
             </p>
 
             {/* --- FIX 6: Replaced emoji grid with bullet points --- */}
-            <ul className="space-y-3 py-4 list-disc list-inside text-papaya-100">
+            <ul className="space-y-3 py-4 list-disc list-outside pl-5 text-papaya-100">
               <li>
                 Order through our website, Swiggy, Zomato, MagicPin, or WhatsApp
               </li>

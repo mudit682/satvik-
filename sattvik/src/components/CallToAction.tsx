@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ShoppingBag, Users } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function CallToAction() {
   const [isVisible, setIsVisible] = useState(false);
@@ -22,10 +23,7 @@ export default function CallToAction() {
     };
   }, []);
 
-  const scrollToMenu = () => {
-    const menuSection = document.getElementById('menu');
-    menuSection?.scrollIntoView({ behavior: 'smooth' });
-  };
+
 
   return (
     // --- 
@@ -33,7 +31,7 @@ export default function CallToAction() {
     // Changed 'bg-gradient-to-b...' to 'bg-papaya'
     // ---
     <section id="cta" className="py-32 bg-papaya relative overflow-hidden">
-      
+
       {/* --- 
         FIX: Removed the 'Light Background Pattern' div
       --- */}
@@ -53,20 +51,23 @@ export default function CallToAction() {
         </div>
 
         <div className={`flex flex-col sm:flex-row gap-6 justify-center items-center ${isVisible ? 'animate-scale-in' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>
-          <button
-            onClick={scrollToMenu}
+          <Link
+            to="/menu"
             className="group relative inline-flex items-center gap-3 px-10 py-5 bg-hunter-600 text-white font-body font-bold text-lg rounded-full hover:bg-hunter-700 transition-all duration-300 hover:scale-105 shadow-2xl hover:shadow-hunter-600/20"
           >
             <ShoppingBag className="w-6 h-6 group-hover:scale-110 transition-transform" />
             <span>Order Now</span>
-          </button>
+          </Link>
 
-          <button className="group relative inline-flex items-center gap-3 px-10 py-5 bg-transparent border-2 border-hunter-600 text-hunter-600 font-body font-bold text-lg rounded-full hover:bg-hunter-600 hover:text-white transition-all duration-300 hover:scale-105 shadow-2xl">
+          <Link
+            to="/testimonials"
+            className="group relative inline-flex items-center gap-3 px-10 py-5 bg-transparent border-2 border-hunter-600 text-hunter-600 font-body font-bold text-lg rounded-full hover:bg-hunter-600 hover:text-white transition-all duration-300 hover:scale-105 shadow-2xl"
+          >
             <Users className="w-6 h-6 group-hover:scale-110 transition-transform" />
             <span>Join Our Community</span>
-          </button>
+          </Link>
         </div>
-        
+
       </div>
     </section>
   );

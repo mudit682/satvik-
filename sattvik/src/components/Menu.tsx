@@ -1,95 +1,72 @@
 import { useState, useEffect, useRef } from 'react';
 import { ShoppingCart, Flame, Leaf, Heart, Sparkles, Clock, Star, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 // Menu items array with sweets (names and prices)
 const menuItems = [
   {
+    name: 'Garden Blossom Salad',
+    description: 'A vibrant garden medley with fresh greens, in-house peanut curd dressing and protein-rich sprouts.',
+    calories: 220,
+    price: '₹99',
+    image: '/menu images/menu IMG/menu2/Garden Blossom Salad.jpg',
+    category: 'Salads',
+  },
+  {
+    name: 'Jau-Dropping Bowl',
+    description: 'Wholesome roasted barley (Jau) mixed with seasonal fruits and nut butter.',
+    calories: 380,
+    price: '₹89',
+    image: '/menu images/menu IMG/menu2/Jau-Dropping Bowl.jpg',
+    category: 'Smoothies',
+  },
+  {
+    name: 'Green Glow Elixir',
+    description: 'Refreshing cold-pressed juice with cucumber, mint, and a hint of ginger.',
+    calories: 45,
+    price: '₹49',
+    image: '/menu images/menu IMG/menu2/Green Glow Elixir.jpg',
+    category: 'Drinks',
+  },
+  {
+    name: 'Kesar-e-Pista Bowl',
+    description: 'A royal saffron and pistachio infused thick creamy dessert.',
+    calories: 240,
+    price: '₹99',
+    image: '/menu images/menu IMG/menu2/Kesar-e-Pista Bowl.jpg',
+    category: 'Desserts',
+  },
+  {
     name: 'Bliss Balls',
-    description: 'A colorful medley of quinoa, roasted vegetables, avocado, and tahini dressing. Pure nourishment in every spoonful.',
-    calories: 420,
-    price: '₹49',
-    image: 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=600',
-    prepTime: '15 min',
-    rating: 4.9,
-    category: 'Signature',
-    benefits: ['High Protein', 'Rich in Fiber', 'Antioxidants']
-  },
-  {
-    name: 'Coco - Nutty Laddoo',
-    description: 'Traditional comfort food reimagined with mung dal, brown rice, turmeric, and healing spices.',
-    calories: 350,
-    price: '₹49',
-    image: 'https://images.pexels.com/photos/1092730/pexels-photo-1092730.jpeg?auto=compress&cs=tinysrgb&w=600',
-    prepTime: '20 min',
-    rating: 4.8,
-    category: 'Comfort',
-    benefits: ['Digestive Health', 'Complete Protein', 'Anti-inflammatory']
-  },
-  {
-    name: 'Trinut Til Bites',
-    description: 'Fresh cucumber, celery, spinach, green apple, ginger, and lemon. Alkalize and energize.',
+    description: 'Power-packed energy bites with dates, almonds, and raw cacao.',
     calories: 120,
-    price: '₹39',
-    image: 'https://images.pexels.com/photos/1435904/pexels-photo-1435904.jpeg?auto=compress&cs=tinysrgb&w=600',
-    prepTime: '5 min',
-    rating: 4.7,
-    category: 'Detox',
-    benefits: ['Hydrating', 'Detoxifying', 'Alkalizing']
+    price: '₹49',
+    image: '/menu images/menu IMG/menu images/blissballs.png',
+    category: 'Desserts',
   },
   {
-    name: 'Choco Truffle Eclairs',
-    description: 'Sweet potato, chickpeas, kale, beets, and hummus. A symphony of flavors and nutrients.',
-    calories: 480,
-    price: '₹69',
-    image: 'https://images.pexels.com/photos/1640770/pexels-photo-1640770.jpeg?auto=compress&cs=tinysrgb&w=600',
-    prepTime: '18 min',
-    rating: 4.9,
-    category: 'Power',
-    benefits: ['Complete Nutrition', 'Plant Protein', 'Vitamins & Minerals']
-  },
-  {
-    name: 'Protein Peda',
-    description: 'Seasonal fruits arranged with coconut yogurt, chia seeds, and raw honey. Nature\'s candy.',
-    calories: 280,
-    price: '₹29',
-    image: 'https://images.pexels.com/photos/1132047/pexels-photo-1132047.jpeg?auto=compress&cs=tinysrgb&w=600',
-    prepTime: '10 min',
-    rating: 4.8,
-    category: 'Fresh',
-    benefits: ['Natural Sugars', 'Probiotics', 'Omega-3']
+    name: 'Tropical Bliss',
+    description: 'Pure coconut water infused with the sweetness of fresh pineapple and a hint of mint.',
+    calories: 120,
+    price: '₹59',
+    image: '/menu images/menu IMG/menu2/Crystal Ash Cooler.jpg', // Placeholder image
+    category: 'Drinks',
   },
   {
     name: 'Royal Kaju Katli',
-    description: 'Handcrafted blend of tulsi, ashwagandha, ginger, and turmeric. Warmth and healing in a cup.',
-    calories: 15,
+    description: 'Thin slices of handcrafted cashew goodness with zero refined sugar.',
+    calories: 140,
     price: '₹39',
-    image: 'https://images.pexels.com/photos/1638280/pexels-photo-1638280.jpeg?auto=compress&cs=tinysrgb&w=600',
-    prepTime: '8 min',
-    rating: 4.6,
-    category: 'Wellness',
-    benefits: ['Stress Relief', 'Immune Support', 'Anti-inflammatory']
+    image: '/menu images/menu IMG/menu images/royalkajukatli.png',
+    category: 'Desserts',
   },
   {
     name: 'Shahi Anjeer Roll',
-    description: 'A rich, nutty roll made with premium figs and nuts. Pure, royal indulgence.',
+    description: 'Luxurious rolls made with premium figs and various nuts.',
     calories: 150,
     price: '₹39',
-    image: 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=600',
-    prepTime: '10 min',
-    rating: 4.8,
-    category: 'Signature',
-    benefits: ['Rich in Iron', 'Energy Boost', 'Refined Sugar Free']
-  },
-  {
-    name: 'Date Chocolate Barks',
-    description: 'Crisp, dark chocolate barks sweetened naturally with dates and topped with seeds.',
-    calories: 130,
-    price: '₹39',
-    image: 'https://images.pexels.com/photos/1092730/pexels-photo-1092730.jpeg?auto=compress&cs=tinysrgb&w=600',
-    prepTime: '5 min',
-    rating: 4.9,
-    category: 'Comfort',
-    benefits: ['Antioxidants', 'Healthy Fats', 'Guilt-free']
+    image: '/menu images/menu IMG/menu images/shahianjeerrolls.png',
+    category: 'Desserts',
   },
 ];
 
@@ -142,17 +119,17 @@ export default function Menu() {
             Menu
           </h2>
           <p className="font-body text-xl text-calPoly-600 max-w-4xl mx-auto leading-relaxed mb-8">
-            Every dish is crafted with <span className="font-semibold text-hunter-600">intention</span> and <span className="font-semibold text-hunter-600">love</span>, 
+            Every dish is crafted with <span className="font-semibold text-hunter-600">intention</span> and <span className="font-semibold text-hunter-600">love</span>,
             using only the purest ingredients to create meals that heal, energize, and bring joy to your daily nourishment journey.
           </p>
-          
+
         </div>
 
         {/* Menu Items */}
         <div className="relative">
           <button
             onClick={() => scroll('left')}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm p-4 rounded-full shadow-xl hover:bg-white hover:scale-110 transition-all duration-300 hidden md:block"
+            className="absolute left-0 md:left-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm p-3 md:p-4 rounded-full shadow-xl hover:bg-white hover:scale-110 transition-all duration-300 flex items-center justify-center"
             aria-label="Scroll left"
           >
             <svg className="w-6 h-6 text-calPoly-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -162,7 +139,7 @@ export default function Menu() {
 
           <button
             onClick={() => scroll('right')}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm p-4 rounded-full shadow-xl hover:bg-white hover:scale-110 transition-all duration-300 hidden md:block"
+            className="absolute right-0 md:right-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm p-3 md:p-4 rounded-full shadow-xl hover:bg-white hover:scale-110 transition-all duration-300 flex items-center justify-center"
             aria-label="Scroll right"
           >
             <svg className="w-6 h-6 text-calPoly-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -190,7 +167,7 @@ export default function Menu() {
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-hunter-600/60 via-transparent to-transparent" />
-                    
+
                   </div>
 
                   {/* Content Section */}
@@ -201,7 +178,7 @@ export default function Menu() {
                     <p className="font-body text-calPoly-600 mb-4 leading-relaxed flex-grow">
                       {item.description}
                     </p>
-                    
+
                   </div>
                 </div>
               </div>
@@ -224,10 +201,13 @@ export default function Menu() {
               Experience the transformative power of pure, whole plant-based nutrition crafted with love and intention.
             </p>
             {/* 4. Button background changed to papaya, text to dark */}
-            <button className="inline-flex items-center gap-3 bg-papaya text-calPoly-700 font-body font-semibold text-lg px-8 py-4 rounded-full hover:bg-papaya-100 transition-all duration-300 hover:scale-105 shadow-lg">
+            <Link
+              to="/menu"
+              className="inline-flex items-center gap-3 bg-papaya text-calPoly-700 font-body font-semibold text-lg px-8 py-4 rounded-full hover:bg-papaya-100 transition-all duration-300 hover:scale-105 shadow-lg"
+            >
               <span>Start Your Journey</span>
               <ArrowRight className="w-5 h-5" />
-            </button>
+            </Link>
           </div>
         </div>
       </div>
