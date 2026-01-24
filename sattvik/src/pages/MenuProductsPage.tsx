@@ -451,12 +451,12 @@ export default function MenuProductsPage() {
 
         <div className="container mx-auto px-6 relative z-10">
           {/* --- FIX 3: Bottom margin changed from mb-16 to mb-12 --- */}
-          <div className="text-center mb-12">
+          <div className="text-left mb-12">
             <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-calPoly-700 mb-6 leading-tight">
               Menu
             </h1>
 
-            <p className="font-body text-xl text-calPoly-600 max-w-4xl mx-auto leading-relaxed">
+            <p className="font-body text-xl text-calPoly-600 max-w-4xl leading-relaxed">
               Every dish is crafted with <span className="font-semibold text-hunter-600">intention</span> and <span className="font-semibold text-hunter-600">love</span>,
               using only the purest ingredients to create meals that heal, energize, and bring joy to your daily nourishment journey.
             </p>
@@ -467,7 +467,7 @@ export default function MenuProductsPage() {
       {/* Filters and Search */}
       <section className="py-12 bg-white/80 backdrop-blur-sm border-b border-hunter-100">
         <div className="container mx-auto px-6">
-          <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
+          <div className="flex flex-col lg:flex-row gap-6 items-start lg:items-center justify-between">
             {/* Search */}
             <div className="relative flex-1 max-w-md">
               <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-calPoly-400" />

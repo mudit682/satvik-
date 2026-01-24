@@ -107,20 +107,20 @@ export default function ContactPage() {
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
             {/* Contact Info */}
             <div className="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-3xl shadow-lg border border-white/50">
-              <h2 className="font-heading text-2xl font-bold text-calPoly-700 mb-6 text-center lg:text-left">We would love to hear from you</h2>
+              <h2 className="font-heading text-2xl font-bold text-calPoly-700 mb-6 text-left">We would love to hear from you</h2>
               <div className="space-y-4 font-body text-calPoly-600">
                 {/* --- FIX: Updated Email --- */}
-                <div className="flex items-center gap-3 justify-center lg:justify-start">
+                <div className="flex items-center gap-3 justify-start">
                   <Mail className="w-5 h-5 text-hunter-600" />
                   <a href="mailto:namaste@satvify.in" className="hover:text-hunter-700">namaste@satvify.in</a>
                 </div>
                 {/* --- FIX: Updated Phone --- */}
-                <div className="flex items-center gap-3 justify-center lg:justify-start">
+                <div className="flex items-center gap-3 justify-start">
                   <Phone className="w-5 h-5 text-hunter-600" />
                   <a href="tel:+919667899233" className="hover:text-hunter-700">+91 96678 99233</a>
                 </div>
                 {/* --- FIX: Updated Address --- */}
-                <div className="flex items-start gap-3 justify-center lg:justify-start text-center lg:text-left"> {/* Changed to items-start */}
+                <div className="flex items-start gap-3 justify-start"> {/* Left aligned on all devices */}
                   <MapPin className="w-5 h-5 text-hunter-600 mt-1 flex-shrink-0" /> {/* Added mt-1 */}
                   <span>GS- 29, Malibu Town, Sector 47, Gurgaon, Haryana 122018</span>
                 </div>
