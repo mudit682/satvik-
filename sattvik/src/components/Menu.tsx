@@ -149,13 +149,13 @@ export default function Menu() {
 
           <div
             ref={scrollRef}
-            className="flex gap-8 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4"
+            className="flex gap-6 md:gap-8 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-8 px-4 md:px-0"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {menuItems.map((item, index) => (
               <div
                 key={index}
-                className={`flex-none w-96 snap-center group ${isVisible ? 'animate-fade-up' : 'opacity-0'}`}
+                className={`flex-none w-[85vw] sm:w-96 snap-center group ${isVisible ? 'animate-fade-up' : 'opacity-0'}`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 h-full flex flex-col">

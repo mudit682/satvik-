@@ -285,7 +285,7 @@ export default function TestimonialsPage() {
       {showForm && (
         <section ref={formRef} className="py-16 bg-white animate-fade-up">
           <div className="container mx-auto px-6 max-w-2xl">
-            <div className="bg-papaya p-8 md:p-12 rounded-3xl shadow-2xl border border-hunter-100">
+            <div className="bg-papaya p-6 md:p-12 rounded-3xl shadow-2xl border border-hunter-100">
               <div className="text-center mb-10">
                 <h3 className="font-heading text-3xl font-bold text-calPoly-700 mb-2">Write Your Review</h3>
                 <p className="font-body text-calPoly-600">How was your Satvify experience?</p>
@@ -330,7 +330,7 @@ export default function TestimonialsPage() {
                         onChange={handleInputChange}
                         required
                         placeholder="Your name"
-                        className="border border-hunter-100 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-hunter-300 bg-white"
+                        className="w-full border border-hunter-100 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-hunter-300 bg-white"
                       />
                     </div>
                     <div className="flex flex-col">
@@ -341,7 +341,7 @@ export default function TestimonialsPage() {
                         value={reviewForm.favorite}
                         onChange={handleInputChange}
                         placeholder="e.g. Satvic Thali"
-                        className="border border-hunter-100 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-hunter-300 bg-white"
+                        className="w-full border border-hunter-100 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-hunter-300 bg-white"
                       />
                     </div>
                   </div>
@@ -360,7 +360,7 @@ export default function TestimonialsPage() {
                     />
                   </div>
 
-                  <div className="flex items-center gap-4 pt-4">
+                  <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
                     <button
                       type="submit"
                       className="flex-1 inline-flex items-center justify-center gap-3 bg-gradient-to-r from-hunter-600 to-hunter-700 text-white font-body font-semibold text-lg px-8 py-4 rounded-full hover:from-hunter-700 hover:to-hunter-800 transition-all duration-300 hover:scale-105 shadow-lg"
@@ -371,7 +371,7 @@ export default function TestimonialsPage() {
                     <button
                       type="button"
                       onClick={() => setShowForm(false)}
-                      className="px-8 py-4 rounded-full border border-hunter-200 text-hunter-600 hover:bg-hunter-50 transition-all"
+                      className="px-8 py-4 rounded-full border border-hunter-200 text-hunter-600 hover:bg-hunter-50 transition-all text-center"
                     >
                       Cancel
                     </button>
