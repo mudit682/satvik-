@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Leaf, Heart } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Heart } from 'lucide-react';
 import FaqAccordion from '../components/FaqAccordion';
 
 // --- FAQ DATA ---
@@ -120,13 +120,13 @@ export default function ContactPage() {
                   <a href="tel:+919667899233" className="hover:text-hunter-700">+91 96678 99233</a>
                 </div>
                 {/* --- FIX: Updated Address --- */}
-                <div className="flex items-start gap-3 justify-start"> {/* Left aligned on all devices */}
+                <div className="flex items-start gap-3 justify-start">
                   <MapPin className="w-5 h-5 text-hunter-600 mt-1 flex-shrink-0" /> {/* Added mt-1 */}
                   <span>GS- 29, Malibu Town, Sector 47, Gurgaon, Haryana 122018</span>
                 </div>
               </div>
 
-              <div className="mt-8 bg-gradient-to-r from-hunter-50 to-calPoly-50 p-6 rounded-2xl border border-hunter-200/50 text-calPoly-700 font-body">
+              <div className="mt-8 bg-gradient-to-r from-hunter-50 to-calPoly-50 p-6 rounded-2xl border border-hunter-200/50 text-calPoly-700 font-body text-left">
                 <p>
                   We operate as a cloud kitchen with a focus on purity and freshness. Pre-orders help us serve you better.
                 </p>

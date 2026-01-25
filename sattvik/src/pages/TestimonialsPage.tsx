@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { Star, Quote, Heart, Users, Trophy, MessageSquare, Leaf, Send } from 'lucide-react';
+import { Star, Quote, Heart, Users, Trophy, MessageSquare, Send, Sprout, ThumbsUp, Utensils, Package } from 'lucide-react';
 
 type Testimonial = {
   name: string;
@@ -117,7 +117,7 @@ const testimonials: Testimonial[] = [
     location: 'Gurgaon',
     quote: 'I was very happy and satisfied with the meal. It was really delicious and filling i couldn\'t believe that a salad can also be so tasty!',
     favorite: 'Garden Blossom Salad',
-    image: '/Testimonials/shweta.jpg',
+    image: '/Testimonials/nodp.jpeg',
     rating: 5,
     monthsWithUs: 1,
   },
@@ -138,9 +138,7 @@ export default function TestimonialsPage() {
   const [reviewForm, setReviewForm] = useState({ name: '', rating: 5, quote: '', favorite: '' });
   const formRef = useRef<HTMLDivElement>(null);
 
-  const avgRating = (
-    testimonials.reduce((sum, t) => sum + t.rating, 0) / testimonials.length
-  ).toFixed(1);
+
 
   const handleWriteReview = () => {
     setShowForm(true);
@@ -192,14 +190,7 @@ export default function TestimonialsPage() {
 
           {/* Trust Stats */}
           {/* --- FIX 2 & 3: Card bg changed to 'bg-papaya', icon bg to 'bg-calPoly-700' --- */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12 max-w-5xl mx-auto">
-            <div className="bg-papaya p-6 rounded-2xl shadow-lg text-center">
-              <div className="w-12 h-12 bg-calPoly-700 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Star className="w-6 h-6 text-white" />
-              </div>
-              <div className="text-2xl font-heading font-bold text-calPoly-700 mb-1">{avgRating}★</div>
-              <div className="font-body text-calPoly-600">Average Rating</div>
-            </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 mt-12 max-w-6xl mx-auto">
             <div className="bg-papaya p-6 rounded-2xl shadow-lg text-center">
               <div className="w-12 h-12 bg-calPoly-700 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <Users className="w-6 h-6 text-white" />
@@ -218,8 +209,43 @@ export default function TestimonialsPage() {
               <div className="w-12 h-12 bg-calPoly-700 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <MessageSquare className="w-6 h-6 text-white" />
               </div>
-              <div className="text-2xl font-heading font-bold text-calPoly-700 mb-1">13</div>
-              <div className="font-body text-calPoly-600">Verified Reviews</div>
+              <div className="text-2xl font-heading font-bold text-calPoly-700 mb-1">98%</div>
+              <div className="font-body text-calPoly-600">appreciated freshness</div>
+            </div>
+            <div className="bg-papaya p-6 rounded-2xl shadow-lg text-center">
+              <div className="w-12 h-12 bg-calPoly-700 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Sprout className="w-6 h-6 text-white" />
+              </div>
+              <div className="text-2xl font-heading font-bold text-calPoly-700 mb-1">90%</div>
+              <div className="font-body text-calPoly-600">Farm-Fresh</div>
+            </div>
+            <div className="bg-papaya p-6 rounded-2xl shadow-lg text-center">
+              <div className="w-12 h-12 bg-calPoly-700 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <ThumbsUp className="w-6 h-6 text-white" />
+              </div>
+              <div className="text-2xl font-heading font-bold text-calPoly-700 mb-1">87%</div>
+              <div className="font-body text-calPoly-600">Highly Recommended</div>
+            </div>
+            <div className="bg-papaya p-6 rounded-2xl shadow-lg text-center">
+              <div className="w-12 h-12 bg-calPoly-700 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Utensils className="w-6 h-6 text-white" />
+              </div>
+              <div className="text-2xl font-heading font-bold text-calPoly-700 mb-1">86%</div>
+              <div className="font-body text-calPoly-600">Irresistible Taste</div>
+            </div>
+            <div className="bg-papaya p-6 rounded-2xl shadow-lg text-center">
+              <div className="w-12 h-12 bg-calPoly-700 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Package className="w-6 h-6 text-white" />
+              </div>
+              <div className="text-2xl font-heading font-bold text-calPoly-700 mb-1">84%</div>
+              <div className="font-body text-calPoly-600">Loved Packaging</div>
+            </div>
+            <div className="bg-papaya p-6 rounded-2xl shadow-lg text-center">
+              <div className="w-12 h-12 bg-calPoly-700 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Star className="w-6 h-6 text-white" />
+              </div>
+              <div className="text-2xl font-heading font-bold text-calPoly-700 mb-1">4.5★</div>
+              <div className="font-body text-calPoly-600">Customer Rating</div>
             </div>
           </div>
         </div>

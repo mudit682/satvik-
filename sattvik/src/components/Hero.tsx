@@ -1,14 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Leaf, Sparkles, ArrowRight, Heart } from 'lucide-react';
-
-const uspIcons = [
-  { src: '/USPs/1.png', label: 'CLEAN & PURE\nNOTHING REFINED' },
-  { src: '/USPs/2.png', label: 'PLANT BASED' },
-  { src: '/USPs/3.png', label: 'REFINED SUGAR FREE' },
-  { src: '/USPs/4.png', label: 'ADDITIVE FREE' },
-  { src: '/USPs/5.png', label: 'REFINED OIL-FREE' },
-  { src: '/USPs/6.png', label: 'ECO FRIENDLY' }
-];
+import USPIcons from './USPIcons';
 
 export default function Hero() {
   const [scrollY, setScrollY] = useState(0);
@@ -24,10 +15,6 @@ export default function Hero() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToMenu = () => {
-    const menuSection = document.getElementById('menu');
-    menuSection?.scrollIntoView({ behavior: 'smooth' });
-  };
 
   return (
     // --- 
@@ -94,27 +81,7 @@ export default function Hero() {
         </div>
 
         {/* USP Icon Cards */}
-        <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} relative z-10`} style={{ transitionDelay: '0.8s' }}>
-          <div className={`grid grid-cols-3 md:grid-cols-6 gap-4 md:gap-6 max-w-4xl mx-auto mt-12 ${isVisible ? 'animate-fade-up' : 'opacity-0'}`} style={{ transitionDelay: '0.8s' }}>
-            {uspIcons.map((icon, index) => (
-              <div
-                key={index}
-                className="bg-white/80 backdrop-blur-sm p-4 md:p-5 rounded-2xl shadow-lg border border-white/50 flex flex-col justify-start items-center group hover:shadow-xl transition-all duration-300"
-              >
-                <div className="flex flex-col items-center gap-3 w-full">
-                  <img
-                    src={icon.src}
-                    alt={`Satvify USP ${index + 1}`}
-                    className="h-10 w-10 md:h-16 md:w-16 object-contain group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <span className="text-[10px] md:text-xs font-heading font-bold text-calPoly-700 leading-tight uppercase whitespace-pre-line text-center group-hover:text-hunter-600 transition-colors">
-                    {icon.label}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        <USPIcons />
       </div>
 
       {/* --- 

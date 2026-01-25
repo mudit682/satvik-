@@ -1,12 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
-import { ShoppingCart, Flame, Leaf, Heart, Sparkles, Clock, Star, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 // Menu items array with sweets (names and prices)
 const menuItems = [
   {
     name: 'Garden Blossom Salad',
-    description: 'A vibrant garden medley with fresh greens, in-house peanut curd dressing and protein-rich sprouts.',
+    description: 'Bright lettuce, cucumber, sweet corn, tomato, & bell peppers in an affair with a creamy cashew dressing topped with pomegranate, raisins, & roasted black sesame seeds.',
     calories: 220,
     price: '₹99',
     image: '/menu images/menu IMG/menu2/Garden Blossom Salad.jpg',
@@ -14,7 +14,7 @@ const menuItems = [
   },
   {
     name: 'Jau-Dropping Bowl',
-    description: 'Wholesome roasted barley (Jau) mixed with seasonal fruits and nut butter.',
+    description: 'Hearty & fresh bowl of Barley with pumpkin, pomegranate, & beetroot richness, in fusion with a green mix of lettuce, spinach, dried thyme, & oregano, made guilt-free with a homemade dressing of tahini, mint leaves, green chilli, & lemon juice.',
     calories: 380,
     price: '₹89',
     image: '/menu images/menu IMG/menu2/Jau-Dropping Bowl.jpg',
@@ -22,7 +22,7 @@ const menuItems = [
   },
   {
     name: 'Green Glow Elixir',
-    description: 'Refreshing cold-pressed juice with cucumber, mint, and a hint of ginger.',
+    description: 'A refreshing medley of crisp cucumber & juicy apples, delicately balanced with fresh spinach & cooling mint leaves. Finished with a hint of ginger zest & a splash of lemon brightness for your green detox.',
     calories: 45,
     price: '₹49',
     image: '/menu images/menu IMG/menu2/Green Glow Elixir.jpg',
@@ -30,7 +30,7 @@ const menuItems = [
   },
   {
     name: 'Kesar-e-Pista Bowl',
-    description: 'A royal saffron and pistachio infused thick creamy dessert.',
+    description: 'When pistachios have a hint of rich saffron, blended with bananas, flavored with rose & cardamom powder, with a nutty experience inside, it creates a guilt-free royal aura.',
     calories: 240,
     price: '₹99',
     image: '/menu images/menu IMG/menu2/Kesar-e-Pista Bowl.jpg',
@@ -38,23 +38,15 @@ const menuItems = [
   },
   {
     name: 'Bliss Balls',
-    description: 'Power-packed energy bites with dates, almonds, and raw cacao.',
+    description: 'A ball made with almonds, seedless dates, dry coconut powder, cacao powder, cinnamon powder, jaggery powder, chia seeds, & a pinch of rock salt. Rolled in a decorative mix of almonds, pistachios, white sesame seeds, & poppy seeds for a wholesome, nutrient-rich treat.',
     calories: 120,
     price: '₹49',
     image: '/menu images/menu IMG/menu images/blissballs.png',
     category: 'Desserts',
   },
   {
-    name: 'Tropical Bliss',
-    description: 'Pure coconut water infused with the sweetness of fresh pineapple and a hint of mint.',
-    calories: 120,
-    price: '₹59',
-    image: '/menu images/menu IMG/menu2/Crystal Ash Cooler.jpg', // Placeholder image
-    category: 'Drinks',
-  },
-  {
     name: 'Royal Kaju Katli',
-    description: 'Thin slices of handcrafted cashew goodness with zero refined sugar.',
+    description: 'Creamy cashews meet the earthy sweetness of jaggery powder, finished with a touch of luxury in silver vark — a classic indulgence with a royal flair.',
     calories: 140,
     price: '₹39',
     image: '/menu images/menu IMG/menu images/royalkajukatli.png',
@@ -62,10 +54,26 @@ const menuItems = [
   },
   {
     name: 'Shahi Anjeer Roll',
-    description: 'Luxurious rolls made with premium figs and various nuts.',
+    description: 'A rich blend of nature\'s sweets and nuts — figs, seedless dates, raisins, and crunchy almonds, pistachios, and cashews, lightly moistened with water and sprinkled with poppy seeds for a wholesome, energizing treat.',
     calories: 150,
     price: '₹39',
     image: '/menu images/menu IMG/menu images/shahianjeerrolls.png',
+    category: 'Desserts',
+  },
+  {
+    name: 'Sat-too Much Protein',
+    description: 'A hearty, protein-packed sattu drink, spiced with black pepper, cumin, lemon, & black salt, chilled with mint & coriander. The OG of protein drinks.',
+    calories: 180,
+    price: '₹59',
+    image: '/menu images/menu IMG/menu2/Sat-too Much Protein.jpg',
+    category: 'Drinks',
+  },
+  {
+    name: 'Nutty Choco Meltz',
+    description: 'A luscious fusion of creamy cashews, earthy jaggery, and bold cacao, uplifted by vanilla, rock salt, and smooth coconut oil — pure indulgence, naturally crafted.',
+    calories: 160,
+    price: '₹69',
+    image: '/menu images/menu IMG/menu images/nuttychocomeltz.png',
     category: 'Desserts',
   },
 ];

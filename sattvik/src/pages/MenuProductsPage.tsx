@@ -1,12 +1,13 @@
 import { useState } from 'react';
-import { ShoppingCart, Flame, Clock, Star, Filter, Search, Leaf, Heart, Sparkles, ArrowRight } from 'lucide-react'; // Added ArrowRight
+import { Filter, Search, ArrowRight } from 'lucide-react'; // Added ArrowRight
+import USPIcons from '../components/USPIcons';
 
 // Menu items array (sweets)
 const menuItems = [
   // --- SALADS ---
   {
     name: 'Garden Blossom Salad',
-    description: 'A vibrant garden medley with fresh greens, in-house peanut curd dressing and protein-rich sprouts.',
+    description: 'Bright lettuce, cucumber, sweet corn, tomato, & bell peppers in an affair with a creamy cashew dressing topped with pomegranate, raisins, & roasted black sesame seeds.',
     calories: 220,
     price: '₹99',
     image: '/menu images/menu IMG/menu2/Garden Blossom Salad.jpg',
@@ -20,7 +21,7 @@ const menuItems = [
   },
   {
     name: 'Exotic Cheesy Salad',
-    description: 'Crispy seasonal vegetables tossed with plant-based "cheese" and herb-infused oil.',
+    description: 'A garden-fresh mix of broccoli, baby corn, & bell peppers with oregano, enveloped in rich cashew–coconut creaminess.',
     calories: 280,
     price: '₹99',
     image: '/menu images/menu IMG/menu2/Exotic Cheesy Salad.jpg',
@@ -34,7 +35,7 @@ const menuItems = [
   },
   {
     name: 'Thai Papaya Zest',
-    description: 'A zesty Thai-inspired salad with raw papaya, peanuts, and a tangy tamarind dressing.',
+    description: 'A tropical crunch that demands the presence of raw papaya, carrots, roasted peanuts, lemon, green chilli, & jaggery, smothered with peanut dressing & coriander on top.',
     calories: 190,
     price: '₹89',
     image: '/menu images/menu IMG/menu2/Thai Papaya Zest.jpg',
@@ -48,7 +49,7 @@ const menuItems = [
   },
   {
     name: 'Sunshine Carrot Crunch',
-    description: 'Grated carrots, raisins, and walnuts with a hint of lemon and black pepper.',
+    description: 'Freshly grated carrots & homegrown sprouts (alfalfa, fenugreek, radish, clover) tossed with mint leaves, soaked cashews, & raisins — all drizzled with a zesty tahini dressing of sesame seeds, dates, jaggery, lemon, green chilli, & rock salt.',
     calories: 150,
     price: '₹79',
     image: '/menu images/menu IMG/menu2/Sunshine Carrot Crunch.jpg',
@@ -62,7 +63,7 @@ const menuItems = [
   },
   {
     name: 'Cauli-fornia Dreamin',
-    description: 'Roasted cauliflower florets with tahini drizzle and pomegranate pearls.',
+    description: 'Colorful medley of cauliflower, cumin, tomatoes, & seasonal veggies, finished with a mustard dressing of cashews, mustard seeds, jaggery, lemon juice, & a pinch of rock salt.',
     calories: 210,
     price: '₹89',
     image: '/menu images/menu IMG/menu2/Cauli-fornia Dreamin.jpeg.jpg',
@@ -78,7 +79,7 @@ const menuItems = [
   // --- SMOOTHIES & BOWLS ---
   {
     name: 'Jau-Dropping Bowl',
-    description: 'Wholesome roasted barley (Jau) mixed with seasonal fruits and nut butter.',
+    description: 'Hearty & fresh bowl of Barley with pumpkin, pomegranate, & beetroot richness, in fusion with a green mix of lettuce, spinach, dried thyme, & oregano, made guilt-free with a homemade dressing of tahini, mint leaves, green chilli, & lemon juice.',
     calories: 380,
     price: '₹89',
     image: '/menu images/menu IMG/menu2/Jau-Dropping Bowl.jpg',
@@ -91,8 +92,8 @@ const menuItems = [
     isGlutenFree: false
   },
   {
-    name: 'Protein Punch Bowl',
-    description: 'A power-packed bowl with sattu, sprouts, nuts, and a touch of organic jaggery.',
+    name: 'Protein Pulse Bowl',
+    description: 'A protein full bowl of [Choose b/w - Lentil Sprouts/ Soyabean Tofu /Chickpea (kabuli chana) /Kidney Beans (rajma) / Black Eyed Beans (lobhia/chowli)] mixed with tomatoes, capsicum, peanuts, coriander, & creamy peanut curd, all given a toss of pomegranate & grated coconut finish, added green chilli & cumin powder.',
     calories: 450,
     price: '₹99',
     image: '/menu images/menu IMG/menu2/Protein Punch Bowl.jpg',
@@ -106,7 +107,7 @@ const menuItems = [
   },
   {
     name: 'Banana Bliss Shake',
-    description: 'Creamy banana blend with almond milk, dates, and a sprinkle of cinnamon.',
+    description: 'A velvety blend of bananas & dates, enriched with coconut milk, lightly spiced with cinnamon for a naturally sweet, creamy delight.',
     calories: 310,
     price: '₹79',
     image: '/menu images/menu IMG/menu2/Banana Bliss Shake.jpg',
@@ -120,7 +121,7 @@ const menuItems = [
   },
   {
     name: 'Earthy Creamy Bowl',
-    description: 'A comforting blend of oats, chia, and coconut cream topped with berries.',
+    description: 'This bowl is rich, nutty, chocolatey, & floral, consisting of almonds, jaggery powder, banana, dates, cacao powder, cinnamon powder, peanut butter, & dry rose petals.',
     calories: 340,
     price: '₹89',
     image: '/menu images/menu IMG/menu2/Earthy Creamy Bowl.jpg',
@@ -133,8 +134,8 @@ const menuItems = [
     isGlutenFree: true
   },
   {
-    name: 'Popeye_s Paradise',
-    description: 'Green superbowl with spinach, green apple, and protein-rich tofu cubes.',
+    name: 'Popeye\'s Paradise',
+    description: 'Spinach, coconut, & dates mingle with banana, lemon, & cinnamon, with fruits & nuts dancing on top.',
     calories: 260,
     price: '₹99',
     image: '/menu images/menu IMG/menu2/Popeye_s Paradise.jpg',
@@ -150,7 +151,7 @@ const menuItems = [
   // --- DRINKS ---
   {
     name: 'Green Glow Elixir',
-    description: 'Refreshing cold-pressed juice with cucumber, mint, and a hint of ginger.',
+    description: 'A refreshing medley of crisp cucumber & juicy apples, delicately balanced with fresh spinach & cooling mint leaves. Finished with a hint of ginger zest & a splash of lemon brightness for your green detox.',
     calories: 45,
     price: '₹49',
     image: '/menu images/menu IMG/menu2/Green Glow Elixir.jpg',
@@ -164,7 +165,7 @@ const menuItems = [
   },
   {
     name: 'App-solutely Beety Carroty',
-    description: 'Vibrant blend of apple, beetroot, and carrot for the ultimate morning boost.',
+    description: 'A vibrant fusion of apple, beetroot, & carrot, brightened with a touch of ginger for an energizing sip.',
     calories: 90,
     price: '₹59',
     image: '/menu images/menu IMG/menu2/App-solutely Beety Carroty.jpg',
@@ -178,7 +179,7 @@ const menuItems = [
   },
   {
     name: 'Khaas Coconut Chaas',
-    description: 'Traditional spiced buttermilk alternative made with fresh coconut milk.',
+    description: 'A refreshing blend of coconut milk & mint leaves, uplifted with lemon juice, roasted cumin, black pepper, & a hint of rock salt.',
     calories: 120,
     price: '₹49',
     image: '/menu images/menu IMG/menu2/Khaas Coconut Chaas.jpg',
@@ -192,7 +193,7 @@ const menuItems = [
   },
   {
     name: 'Crystal Ash Cooler',
-    description: 'Unique cooling drink made from Ash Gourd (Petha) juice with a touch of mint.',
+    description: 'The gentle freshness of ash gourd juice, naturally sweet & cooling, a symbol of pure energy. Light, detoxifying, & deeply satvic.',
     calories: 30,
     price: '₹49',
     image: '/menu images/menu IMG/menu2/Crystal Ash Cooler.jpg',
@@ -205,16 +206,16 @@ const menuItems = [
     isGlutenFree: true
   },
   {
-    name: 'Tropical Bliss',
-    description: 'Pure coconut water infused with the sweetness of fresh pineapple and a hint of mint.',
-    calories: 120,
+    name: 'Sat-too Much Protein',
+    description: 'A hearty, protein-packed sattu drink, spiced with black pepper, cumin, lemon, & black salt, chilled with mint & coriander. The OG of protein drinks.',
+    calories: 180,
     price: '₹59',
-    image: '/menu images/menu IMG/menu2/Crystal Ash Cooler.jpg', // Placeholder image
+    image: '/menu images/menu IMG/menu2/Sat-too Much Protein.jpg',
     prepTime: '5 min',
-    rating: 4.8,
+    rating: 4.9,
     category: 'Drinks',
-    ingredients: ['Coconut Water', 'Pineapple', 'Mint'],
-    benefits: ['Hydrating', 'Refreshing', 'Pure Energy'],
+    ingredients: ['Sattu (Roasted Gram)', 'Cumin', 'Pink Salt', 'Lemon'],
+    benefits: ['High Protein', 'Sustained Energy', 'Easy to Digest'],
     isVegan: true,
     isGlutenFree: true
   },
@@ -222,7 +223,7 @@ const menuItems = [
   // --- DESSERTS & SWEETS ---
   {
     name: 'Bliss Balls',
-    description: 'Power-packed energy bites with dates, almonds, and raw cacao.',
+    description: 'A ball made with almonds, seedless dates, dry coconut powder, cacao powder, cinnamon powder, jaggery powder, chia seeds, & a pinch of rock salt. Rolled in a decorative mix of almonds, pistachios, white sesame seeds, & poppy seeds for a wholesome, nutrient-rich treat.',
     calories: 120,
     price: '₹49',
     image: '/menu images/menu IMG/menu images/blissballs.png',
@@ -235,8 +236,22 @@ const menuItems = [
     isGlutenFree: true
   },
   {
+    name: 'Nutty Choco Meltz',
+    description: 'A luscious fusion of creamy cashews, earthy jaggery, and bold cacao, uplifted by vanilla, rock salt, and smooth coconut oil — pure indulgence, naturally crafted.',
+    calories: 160,
+    price: '₹69',
+    image: '/menu images/menu IMG/menu images/nuttychocomeltz.png',
+    prepTime: '10 min',
+    rating: 5.0,
+    category: 'Desserts',
+    ingredients: ['Dark Cacao', 'Almonds', 'Walnuts', 'Dates'],
+    benefits: ['Antioxidants', 'Healthy Fats', 'Mood Booster'],
+    isVegan: true,
+    isGlutenFree: true
+  },
+  {
     name: 'Coco Nutty Laddoo',
-    description: 'Traditional sweet reimaged with coconut, nuts, and natural sweeteners.',
+    description: 'A simple, wholesome treat made with cashews, raisins, & dry coconut powder. Naturally sweet & rich, these sweet & slightly sour coconut balls are perfect for a quick energy boost.',
     calories: 140,
     price: '₹49',
     image: '/menu images/menu IMG/menu images/choconuttyladoo.png',
@@ -250,7 +265,7 @@ const menuItems = [
   },
   {
     name: 'Trinut Til Bites',
-    description: 'Crunchy snack bars with three types of nuts and nutrient-rich sesame seeds.',
+    description: 'A crunchy celebration of peanuts, almonds, cashews & white sesame seeds powder, bound together with jaggery & a swirl of almond butter, then kissed with fennel & cardamom for a spiced, nostalgic crunch. Just a splash of water, & it\'s magic.',
     calories: 130,
     price: '₹39',
     image: '/menu images/menu IMG/menu images/trinuttilbites.png',
@@ -264,7 +279,7 @@ const menuItems = [
   },
   {
     name: 'Choco Truffle Eclairs',
-    description: 'Guilt-free chocolate eclairs made with dates and cocoa butter.',
+    description: 'Almond chunks infused with soft dates, cloaked in a luscious chocolate-cashew sauce spun from coconut oil, jaggery, cacao, vanilla, & a dash of rock salt. Drizzled with creamy peanut butter. It\'s not just a treat — it\'s a bite-sized cosmic event.',
     calories: 150,
     price: '₹69',
     image: '/menu images/menu IMG/menu images/chocotruffleeclairs.png',
@@ -278,7 +293,7 @@ const menuItems = [
   },
   {
     name: 'Protein Peda',
-    description: 'Handcrafted protein-rich sweet with nuts and sattu.',
+    description: 'Earthy sattu, sweet dates, & vibrant beetroot juice come together in this soft, spiced treat. Flavored with cardamom, crowned with pistachios, & finished with delicate rose petals — it\'s tradition, reimagined in pink.',
     calories: 110,
     price: '₹29',
     image: '/menu images/menu IMG/menu images/proteinpeda.png',
@@ -292,7 +307,7 @@ const menuItems = [
   },
   {
     name: 'Royal Kaju Katli',
-    description: 'Thin slices of handcrafted cashew goodness with zero refined sugar.',
+    description: 'Creamy cashews meet the earthy sweetness of jaggery powder, finished with a touch of luxury in silver vark — a classic indulgence with a royal flair.',
     calories: 140,
     price: '₹39',
     image: '/menu images/menu IMG/menu images/royalkajukatli.png',
@@ -306,7 +321,7 @@ const menuItems = [
   },
   {
     name: 'Shahi Anjeer Roll',
-    description: 'Luxurious rolls made with premium figs and various nuts.',
+    description: 'A rich blend of nature\'s sweets and nuts — figs, seedless dates, raisins, and crunchy almonds, pistachios, and cashews, lightly moistened with water and sprinkled with poppy seeds for a wholesome, energizing treat.',
     calories: 150,
     price: '₹39',
     image: '/menu images/menu IMG/menu images/shahianjeerrolls.png',
@@ -320,7 +335,7 @@ const menuItems = [
   },
   {
     name: 'Date Chocolate Barks',
-    description: 'Dark, rich chocolate barks sweetened with dates and loaded with seeds.',
+    description: 'Fudgy dates, jaggery, & cacao swirled with coconut oil, finished with a cheeky pinch of rock salt. Sweet, salty, & sinfully good — no non-sense, no guilt.',
     calories: 130,
     price: '₹39',
     image: '/menu images/menu IMG/menu images/datechocolatebarks.png',
@@ -334,7 +349,7 @@ const menuItems = [
   },
   {
     name: 'Chia-licious Pudding',
-    description: 'Creamy coconut-chia pudding layered with seasonal fruit purees.',
+    description: 'A mystical mix of coconut milk & chia seeds, spiced with cinnamon & rock salt, finished with the punch of colorful fruits, raisins, & dates.',
     calories: 180,
     price: '₹79',
     image: '/menu images/menu IMG/menu2/Chia-licious Pudding.jpg',
@@ -348,7 +363,7 @@ const menuItems = [
   },
   {
     name: 'Choco Loco Carnival',
-    description: 'A decadent chocolate dessert bowl with roasted nuts and date caramel.',
+    description: 'Freshly grinded bananas whipped with rich cacao & dates, swirled with creamy coconut milk & peanut butter, lifted by a hint of cinnamon & a cheeky pinch of salt.',
     calories: 290,
     price: '₹89',
     image: '/menu images/menu IMG/menu2/Choco Loco Carnival.jpg',
@@ -362,7 +377,7 @@ const menuItems = [
   },
   {
     name: 'Kesar-e-Pista Bowl',
-    description: 'A royal saffron and pistachio infused thick creamy dessert.',
+    description: 'When pistachios have a hint of rich saffron, blended with bananas, flavored with rose & cardamom powder, with a nutty experience inside, it creates a guilt-free royal aura.',
     calories: 240,
     price: '₹99',
     image: '/menu images/menu IMG/menu2/Kesar-e-Pista Bowl.jpg',
@@ -376,7 +391,7 @@ const menuItems = [
   },
   {
     name: 'The Sweet Beet Treat',
-    description: 'Naturally sweet beetroot halwa made with cashews and organic jaggery.',
+    description: 'Banana, apple & pear meet beetroot for a sweet surprise, dressed up with fresh fruits, & roasted nuts.',
     calories: 210,
     price: '₹69',
     image: '/menu images/menu IMG/menu2/The Sweet Beet Treat.jpg',
@@ -390,7 +405,7 @@ const menuItems = [
   },
   {
     name: 'Caramello Nutty Punch',
-    description: 'A nutty smoothie with a natural date-based caramel twist.',
+    description: 'True to its name, this caramel-y bowl is based on creamy walnuts, cashews, almonds & banana, naturally sweetened with dates, & topped with crunchy satvic granola.',
     calories: 320,
     price: '₹89',
     image: '/menu images/menu IMG/menu2/Caramello Nutty Punch.jpg',
@@ -461,6 +476,13 @@ export default function MenuProductsPage() {
               using only the purest ingredients to create meals that heal, energize, and bring joy to your daily nourishment journey.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* USPs Section */}
+      <section className="py-8 bg-white overflow-hidden">
+        <div className="container mx-auto px-6">
+          <USPIcons />
         </div>
       </section>
 

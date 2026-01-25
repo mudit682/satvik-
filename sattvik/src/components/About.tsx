@@ -1,63 +1,14 @@
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Leaf, Heart, Sparkles, Droplets } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 
 const images = [
-  'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800',
-  'https://images.pexels.com/photos/1092730/pexels-photo-1092730.jpeg?auto=compress&cs=tinysrgb&w=800',
-  'https://images.pexels.com/photos/1640770/pexels-photo-1640770.jpeg?auto=compress&cs=tinysrgb&w=800',
+  '/menu images/menu IMG/menu2/Garden Blossom Salad.jpg',
+  '/menu images/menu IMG/menu2/Jau-Dropping Bowl.jpg',
+  '/menu images/menu IMG/menu2/Green Glow Elixir.jpg',
+  '/menu images/menu IMG/menu images/blissballs.png'
 ];
 
-const values = [
-  {
-    icon: Leaf,
-    title: 'Living',
-    description: 'Fresh, natural foods free from additives and preservatives.',
-    color: 'from-hunter-500 to-calPoly-600',
-    bgColor: 'bg-hunter-50',
-    stats: '100% Fresh'
-  },
-  {
-    icon: Heart,
-    title: 'Wholesome',
-    description: 'Minimally processed, nutrient-rich meals free from refined sugar, oil, or flour.',
-    color: 'from-xanthous-500 to-hunter-500',
-    bgColor: 'bg-xanthous-50',
-    stats: 'No Refined'
-  },
-  {
-    icon: Sparkles,
-    title: 'Plant-Based',
-    description: 'Compassionate, vegan, and cruelty-free meals that honor all life.',
-    color: 'from-citron-500 to-hunter-500',
-    bgColor: 'bg-citron-50',
-    stats: '100% Vegan'
-  },
-  {
-    icon: Droplets,
-    title: 'Water-Rich',
-    description: 'Fruits and vegetables that hydrate, heal, and balance your body naturally.',
-    color: 'from-teal-500 to-hunter-500',
-    bgColor: 'bg-teal-50',
-    stats: 'Natural Hydration'
-  },
-  {
-    icon: Heart,
-    title: 'Sustainability',
-    description: 'Eco-friendly sourcing and packaging for a lighter environmental footprint.',
-    color: 'from-green-500 to-hunter-500',
-    bgColor: 'bg-green-50',
-    stats: 'Eco-Friendly'
-  },
-  {
-    icon: Sparkles,
-    title: 'Spirituality',
-    description: 'Non-stimulating meals that support clarity, calm, and balance.',
-    color: 'from-purple-500 to-hunter-500',
-    bgColor: 'bg-purple-50',
-    stats: 'Mindful Living'
-  }
-];
 
 
 export default function About() {
