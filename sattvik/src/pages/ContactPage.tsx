@@ -106,23 +106,23 @@ export default function ContactPage() {
 
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
             {/* Contact Info */}
-            <div className="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-3xl shadow-lg border border-white/50">
-              <h2 className="font-heading text-2xl font-bold text-calPoly-700 mb-6 text-left">We would love to hear from you</h2>
-              <div className="space-y-4 font-body text-calPoly-600">
+            <div className="bg-white/80 backdrop-blur-sm p-4 sm:p-6 md:p-8 rounded-3xl shadow-lg border border-white/50 overflow-hidden">
+              <h2 className="font-heading text-xl sm:text-2xl font-bold text-calPoly-700 mb-6 text-left break-words">We would love to hear from you</h2>
+              <div className="space-y-4 font-body text-calPoly-600 text-sm sm:text-base">
                 {/* --- FIX: Updated Email --- */}
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3">
                   <Mail className="w-5 h-5 text-hunter-600" />
-                  <a href="mailto:namaste@satvify.in" className="hover:text-hunter-700">namaste@satvify.in</a>
+                  <a href="mailto:namaste@satvify.in" className="hover:text-hunter-700 break-words">namaste@satvify.in</a>
                 </div>
                 {/* --- FIX: Updated Phone --- */}
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3">
                   <Phone className="w-5 h-5 text-hunter-600" />
-                  <a href="tel:+919667899233" className="hover:text-hunter-700">+91 96678 99233</a>
+                  <a href="tel:+919667899233" className="hover:text-hunter-700 break-words">+91 96678 99233</a>
                 </div>
                 {/* --- FIX: Updated Address --- */}
                 <div className="flex flex-col sm:flex-row items-start gap-2 sm:gap-3">
                   <MapPin className="w-5 h-5 text-hunter-600 mt-1 flex-shrink-0" /> {/* Added mt-1 */}
-                  <span className="text-left">GS- 29, Malibu Town, Sector 47, Gurgaon, Haryana 122018</span>
+                  <span className="text-left break-words">GS- 29, Malibu Town, Sector 47, Gurgaon, Haryana 122018</span>
                 </div>
               </div>
 
@@ -134,21 +134,21 @@ export default function ContactPage() {
             </div>
 
             {/* Contact Form */}
-            <form onSubmit={handleSubmit} className="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-3xl shadow-lg border border-white/50">
-              <h2 className="font-heading text-2xl font-bold text-calPoly-700 mb-6 text-center lg:text-left">Send a Message</h2>
+            <form onSubmit={handleSubmit} className="bg-white/80 backdrop-blur-sm p-4 sm:p-6 md:p-8 rounded-3xl shadow-lg border border-white/50 overflow-hidden">
+              <h2 className="font-heading text-xl sm:text-2xl font-bold text-calPoly-700 mb-6 text-left">Send a Message</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="flex flex-col">
-                  <label htmlFor="name" className="font-body text-sm text-calPoly-600 mb-2 text-center md:text-left">Name</label>
-                  <input id="name" name="name" value={form.name} onChange={handleChange} required placeholder="Your full name" title="Your full name" className="border border-calPoly-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-hunter-300 text-center md:text-left" />
+                  <label htmlFor="name" className="font-body text-sm text-calPoly-600 mb-2 text-left">Name</label>
+                  <input id="name" name="name" value={form.name} onChange={handleChange} required placeholder="Your full name" title="Your full name" className="border border-calPoly-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-hunter-300 text-left w-full" />
                 </div>
                 <div className="flex flex-col">
-                  <label htmlFor="phone" className="font-body text-sm text-calPoly-600 mb-2 text-center md:text-left">Phone No</label>
-                  <input id="phone" type="tel" name="phone" value={form.phone} onChange={handleChange} required placeholder="Your 10-digit number" title="Your phone number" className="border border-calPoly-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-hunter-300 text-center md:text-left" />
+                  <label htmlFor="phone" className="font-body text-sm text-calPoly-600 mb-2 text-left">Phone No</label>
+                  <input id="phone" type="tel" name="phone" value={form.phone} onChange={handleChange} required placeholder="Your 10-digit number" title="Your phone number" className="border border-calPoly-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-hunter-300 text-left w-full" />
                 </div>
               </div>
               <div className="flex flex-col mt-6">
-                <label htmlFor="message" className="font-body text-sm text-calPoly-600 mb-2 text-center md:text-left">Message</label>
-                <textarea id="message" name="message" value={form.message} onChange={handleChange} required rows={6} placeholder="How can we help you?" title="Your message" className="border border-calPoly-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-hunter-300 text-center md:text-left" />
+                <label htmlFor="message" className="font-body text-sm text-calPoly-600 mb-2 text-left">Message</label>
+                <textarea id="message" name="message" value={form.message} onChange={handleChange} required rows={6} placeholder="How can we help you?" title="Your message" className="border border-calPoly-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-hunter-300 text-left w-full" />
               </div>
 
               <div className="mt-8 flex flex-col items-center lg:flex-row lg:items-center gap-4">
