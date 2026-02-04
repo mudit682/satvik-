@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Star, ChevronLeft, ChevronRight, Quote, Heart, Sparkles } from 'lucide-react';
+import { Star, ChevronLeft, ChevronRight, Quote, Users, ThumbsUp, Sprout, Utensils } from 'lucide-react';
 
 // --- DATA CLEANED UP: Removed role, location, experience, and favorite ---
 const testimonials = [
@@ -188,37 +188,45 @@ export default function Testimonials() {
         </div>
 
         {/* Stats Section */}
-        <div className={`grid md:grid-cols-4 gap-6 ${isVisible ? 'animate-fade-up' : 'opacity-0'}`} style={{ transitionDelay: '0.6s' }}>
+        <div className={`grid sm:grid-cols-2 lg:grid-cols-5 gap-4 ${isVisible ? 'animate-fade-up' : 'opacity-0'}`} style={{ transitionDelay: '0.6s' }}>
+          <div className="bg-papaya p-6 rounded-2xl shadow-lg text-center group hover:shadow-xl transition-all duration-300">
+            <div className="w-12 h-12 bg-calPoly-700 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+              <Users className="w-6 h-6 text-white" />
+            </div>
+            <div className="text-2xl font-heading font-bold text-calPoly-700 mb-1">100+</div>
+            <div className="font-body text-calPoly-600 font-medium">Happy Customers</div>
+          </div>
+
+          <div className="bg-papaya p-6 rounded-2xl shadow-lg text-center group hover:shadow-xl transition-all duration-300">
+            <div className="w-12 h-12 bg-calPoly-700 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+              <ThumbsUp className="w-6 h-6 text-white" />
+            </div>
+            <div className="text-2xl font-heading font-bold text-calPoly-700 mb-1">95%</div>
+            <div className="font-body text-calPoly-600 font-medium">Would Recommend</div>
+          </div>
+
+          <div className="bg-papaya p-6 rounded-2xl shadow-lg text-center group hover:shadow-xl transition-all duration-300">
+            <div className="w-12 h-12 bg-calPoly-700 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+              <Sprout className="w-6 h-6 text-white" />
+            </div>
+            <div className="text-2xl font-heading font-bold text-calPoly-700 mb-1">98%</div>
+            <div className="font-body text-calPoly-600 font-medium">appreciated freshness</div>
+          </div>
+
+          <div className="bg-papaya p-6 rounded-2xl shadow-lg text-center group hover:shadow-xl transition-all duration-300">
+            <div className="w-12 h-12 bg-calPoly-700 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+              <Utensils className="w-6 h-6 text-white" />
+            </div>
+            <div className="text-2xl font-heading font-bold text-calPoly-700 mb-1">86%</div>
+            <div className="font-body text-calPoly-600 font-medium">Irresistible Taste</div>
+          </div>
+
           <div className="bg-papaya p-6 rounded-2xl shadow-lg text-center group hover:shadow-xl transition-all duration-300">
             <div className="w-12 h-12 bg-calPoly-700 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
               <Star className="w-6 h-6 text-white" />
             </div>
-            <div className="text-2xl font-heading font-bold text-calPoly-700 mb-1">4.9★</div>
-            <div className="font-body text-calPoly-600">Average Rating</div>
-          </div>
-
-          <div className="bg-papaya p-6 rounded-2xl shadow-lg text-center group hover:shadow-xl transition-all duration-300">
-            <div className="w-12 h-12 bg-calPoly-700 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-              <Heart className="w-6 h-6 text-white" />
-            </div>
-            <div className="text-2xl font-heading font-bold text-calPoly-700 mb-1">500+</div>
-            <div className="font-body text-calPoly-600">Happy Customers</div>
-          </div>
-
-          <div className="bg-papaya p-6 rounded-2xl shadow-lg text-center group hover:shadow-xl transition-all duration-300">
-            <div className="w-12 h-12 bg-calPoly-700 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-              <Sparkles className="w-6 h-6 text-white" />
-            </div>
-            <div className="text-2xl font-heading font-bold text-calPoly-700 mb-1">98%</div>
-            <div className="font-body text-calPoly-600">Would Recommend</div>
-          </div>
-
-          <div className="bg-papaya p-6 rounded-2xl shadow-lg text-center group hover:shadow-xl transition-all duration-300">
-            <div className="w-12 h-12 bg-calPoly-700 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-              <Quote className="w-6 h-6 text-white" />
-            </div>
-            <div className="text-2xl font-heading font-bold text-calPoly-700 mb-1">1000+</div>
-            <div className="font-body text-calPoly-600">Reviews</div>
+            <div className="text-2xl font-heading font-bold text-calPoly-700 mb-1">4.5★</div>
+            <div className="font-body text-calPoly-600 font-medium">Customer Rating</div>
           </div>
         </div>
       </div>

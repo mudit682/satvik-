@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Sprout, Droplets, ArrowRight, Wheat, Vegan, Recycle, Sparkles } from 'lucide-react';
+import { Sprout, Droplets, RotateCw, Wheat, Vegan, Recycle, Sparkles } from 'lucide-react';
 
 const philosophies = [
   {
@@ -80,6 +80,19 @@ export default function Philosophy() {
     };
   }, []);
 
+  // Auto-flip logic
+  useEffect(() => {
+    if (!isVisible) return;
+
+    let currentIndex = 0;
+    const interval = setInterval(() => {
+      setFlippedCards([currentIndex]);
+      currentIndex = (currentIndex + 1) % philosophies.length;
+    }, 4000); // Changed flip every 4 seconds
+
+    return () => clearInterval(interval);
+  }, [isVisible]);
+
   const toggleFlip = (index: number) => {
     setFlippedCards((prev) =>
       prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
@@ -151,8 +164,8 @@ export default function Philosophy() {
                         {philosophy.description}
                       </p>
                       <div className="flex items-center gap-2 text-hunter-600 font-body font-semibold hover:text-hunter-700 transition-colors">
-                        <span>Learn More</span>
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        <span>Know more</span>
+                        <RotateCw className="w-4 h-4 group-hover:rotate-180 transition-transform duration-500" />
                       </div>
                     </div>
 

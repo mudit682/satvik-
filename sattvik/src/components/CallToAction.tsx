@@ -51,13 +51,15 @@ export default function CallToAction() {
         </div>
 
         <div className={`flex flex-col sm:flex-row gap-6 justify-center items-center ${isVisible ? 'animate-scale-in' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>
-          <Link
-            to="/menu"
+          <a
+            href="https://wa.me/919667899233"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group relative inline-flex items-center gap-3 px-10 py-5 bg-hunter-600 text-white font-body font-bold text-lg rounded-full hover:bg-hunter-700 transition-all duration-300 hover:scale-105 shadow-2xl hover:shadow-hunter-600/20"
           >
             <ShoppingBag className="w-6 h-6 group-hover:scale-110 transition-transform" />
             <span>Order Now</span>
-          </Link>
+          </a>
 
           <Link
             to="/testimonials"

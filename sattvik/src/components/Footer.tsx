@@ -13,16 +13,16 @@ export default function Footer() {
         <div className="absolute bottom-10 right-10 w-40 h-40 bg-xanthous-400 rounded-full blur-3xl"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-teal-400 rounded-full blur-3xl"></div>
       </div>
-      
+
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
-          
+
           {/* Logo Section */}
           <div>
             <div className="flex items-center gap-2 mb-4 h-32">
-              <img 
-                src="/full logo footer.png" 
-                alt="Satvify Logo" 
+              <img
+                src="/full logo footer.png"
+                alt="Satvify Logo"
                 className="h-64 w-auto object-contain"
               />
             </div>
@@ -90,7 +90,7 @@ export default function Footer() {
                 <div className="flex items-start gap-2 text-papaya-100"> {/* Changed to items-start for long text */}
                   <MapPin className="w-4 h-4 mt-1 flex-shrink-0" /> {/* Added mt-1 and flex-shrink-0 */}
                   <span>
-                    Address: GS-29, Green Street, Malibu Towne, Sector 47, Gurgaon, Haryana - 122018, India
+                    Address: <a href=" https://maps.app.goo.gl/von2MYpyNtTy4AFU7?g_st=iw" target="_blank" rel="noopener noreferrer" className="hover:text-citron-300">GS-29, Green Street, Malibu Towne, Sector 47, Gurgaon, Haryana-122018, India. </a>
                   </span>
                 </div>
               </li>
@@ -152,11 +152,11 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            
+
             <p className="font-body text-papaya-100 text-sm">
               © {currentYear} Satvify. All rights reserved.
             </p>
-            
+
             <p className="font-body text-sm text-papaya-200">
               Designed With ❤️ By Team Satvify
             </p>

@@ -39,8 +39,16 @@ const WhatWeDo: React.FC = () => {
     '/menu images/menu IMG/menu2/Exotic Cheesy Salad.jpg',
     '/menu images/menu IMG/menu2/Protein Punch Bowl.jpg',
     '/menu images/menu IMG/menu2/Khaas Coconut Chaas.jpg',
-    '/menu images/menu IMG/menu images/choconuttyladoo.png'
+    '/menu images/menu IMG/menu2/Chocolate Truffle Eclairs (2).jpg'
   ];
+
+  // Auto-change image logic
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 4000); // Change image every 4 seconds
+    return () => clearInterval(interval);
+  }, [images.length]);
 
   const handleImageClick = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -69,12 +77,12 @@ const WhatWeDo: React.FC = () => {
             <img
               src={images[currentImageIndex]}
               alt={`Satvify wholesome meal ${currentImageIndex + 1}`}
-              className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
+              className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
             />
             {/* Gradient Overlay for better text visibility (optional but good for consistency) */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
 
-            <div className="absolute bottom-4 right-4 bg-white/20 backdrop-blur-md text-white text-xs px-3 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none border border-white/30">
+            <div className="absolute bottom-6 right-6 bg-black/60 backdrop-blur-md text-white text-sm font-medium px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none border border-white/20">
               Tap to see more
             </div>
           </div>

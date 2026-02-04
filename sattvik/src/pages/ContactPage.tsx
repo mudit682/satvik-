@@ -106,7 +106,7 @@ export default function ContactPage() {
 
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
             {/* Contact Info */}
-            <div className="bg-white/80 backdrop-blur-sm p-4 sm:p-6 md:p-8 rounded-3xl shadow-lg border border-white/50 overflow-hidden">
+            <div className="bg-papaya/50 backdrop-blur-sm p-4 sm:p-6 md:p-8 rounded-3xl shadow-lg border border-white/50 overflow-hidden">
               <h2 className="font-heading text-xl sm:text-2xl font-bold text-calPoly-700 mb-6 text-left break-words">We would love to hear from you</h2>
               <div className="space-y-4 font-body text-calPoly-600 text-sm sm:text-base">
                 {/* --- FIX: Updated Email --- */}
@@ -122,7 +122,7 @@ export default function ContactPage() {
                 {/* --- FIX: Updated Address --- */}
                 <div className="flex flex-col sm:flex-row items-start gap-2 sm:gap-3">
                   <MapPin className="w-5 h-5 text-hunter-600 mt-1 flex-shrink-0" /> {/* Added mt-1 */}
-                  <span className="text-left break-words">GS- 29, Malibu Town, Sector 47, Gurgaon, Haryana 122018</span>
+                  <a href="https://maps.app.goo.gl/9VZH8TBHDzR1WndX6" target="_blank" rel="noopener noreferrer" className="hover:text-hunter-700 break-words">See my real-time location on Maps</a>
                 </div>
               </div>
 
@@ -134,7 +134,7 @@ export default function ContactPage() {
             </div>
 
             {/* Contact Form */}
-            <form onSubmit={handleSubmit} className="bg-white/80 backdrop-blur-sm p-4 sm:p-6 md:p-8 rounded-3xl shadow-lg border border-white/50 overflow-hidden">
+            <form onSubmit={handleSubmit} className="bg-papaya/50 backdrop-blur-sm p-4 sm:p-6 md:p-8 rounded-3xl shadow-lg border border-white/50 overflow-hidden">
               <h2 className="font-heading text-xl sm:text-2xl font-bold text-calPoly-700 mb-6 text-left">Send a Message</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="flex flex-col">
@@ -142,7 +142,7 @@ export default function ContactPage() {
                   <input id="name" name="name" value={form.name} onChange={handleChange} required placeholder="Your full name" title="Your full name" className="border border-calPoly-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-hunter-300 text-left w-full" />
                 </div>
                 <div className="flex flex-col">
-                  <label htmlFor="phone" className="font-body text-sm text-calPoly-600 mb-2 text-left">Phone No</label>
+                  <label htmlFor="phone" className="font-body text-sm text-calPoly-600 mb-2 text-left">Phone No.</label>
                   <input id="phone" type="tel" name="phone" value={form.phone} onChange={handleChange} required placeholder="Your 10-digit number" title="Your phone number" className="border border-calPoly-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-hunter-300 text-left w-full" />
                 </div>
               </div>

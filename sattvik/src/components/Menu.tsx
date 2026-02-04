@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 // Menu items array with sweets (names and prices)
 const menuItems = [
@@ -18,7 +17,7 @@ const menuItems = [
     calories: 380,
     price: '₹89',
     image: '/menu images/menu IMG/menu2/Jau-Dropping Bowl.jpg',
-    category: 'Smoothies',
+    category: 'Salads',
   },
   {
     name: 'Green Glow Elixir',
@@ -41,7 +40,7 @@ const menuItems = [
     description: 'A ball made with almonds, seedless dates, dry coconut powder, cacao powder, cinnamon powder, jaggery powder, chia seeds, & a pinch of rock salt. Rolled in a decorative mix of almonds, pistachios, white sesame seeds, & poppy seeds for a wholesome, nutrient-rich treat.',
     calories: 120,
     price: '₹49',
-    image: '/menu images/menu IMG/menu images/blissballs.png',
+    image: '/menu images/menu IMG/menu2/Bliss Balls.jpg',
     category: 'Desserts',
   },
   {
@@ -49,15 +48,15 @@ const menuItems = [
     description: 'Creamy cashews meet the earthy sweetness of jaggery powder, finished with a touch of luxury in silver vark — a classic indulgence with a royal flair.',
     calories: 140,
     price: '₹39',
-    image: '/menu images/menu IMG/menu images/royalkajukatli.png',
+    image: '/menu images/kaju katli.png',
     category: 'Desserts',
   },
   {
-    name: 'Shahi Anjeer Roll',
-    description: 'A rich blend of nature\'s sweets and nuts — figs, seedless dates, raisins, and crunchy almonds, pistachios, and cashews, lightly moistened with water and sprinkled with poppy seeds for a wholesome, energizing treat.',
+    name: 'Anjeer Rolls',
+    description: 'A rich blend of nature\'s sweets and nuts — figs, seedless dates, raisins, and crunchy almonds, pistachios, and cashews, lightly moistened with water and sprinkled with poppy seeds for a wholesome, energy-treat.',
     calories: 150,
     price: '₹39',
-    image: '/menu images/menu IMG/menu images/shahianjeerrolls.png',
+    image: '/menu images/menu IMG/menu2/Anjeer Rolls.png',
     category: 'Desserts',
   },
   {
@@ -69,11 +68,19 @@ const menuItems = [
     category: 'Drinks',
   },
   {
+    name: 'Royal Thandai',
+    description: 'A cooling festive blend of almonds, fennel, & poppy seeds, featuring a delicate flavor balanced with dates, jaggery, cardamom powder, pepper, & rock salt. Blended with coconut milk, garnished with pistachio, saffron, & rose petals.',
+    calories: 220,
+    price: '₹89',
+    image: '/menu images/menu IMG/menu images/Royal Thandai.jpg',
+    category: 'Drinks',
+  },
+  {
     name: 'Nutty Choco Meltz',
     description: 'A luscious fusion of creamy cashews, earthy jaggery, and bold cacao, uplifted by vanilla, rock salt, and smooth coconut oil — pure indulgence, naturally crafted.',
     calories: 160,
     price: '₹69',
-    image: '/menu images/menu IMG/menu images/nuttychocomeltz.png',
+    image: '/menu images/Nutty Choco Meltz.png',
     category: 'Desserts',
   },
 ];
@@ -95,8 +102,20 @@ export default function Menu() {
     const element = document.getElementById('menu');
     if (element) observer.observe(element);
 
+    const interval = setInterval(() => {
+      if (scrollRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+        if (scrollLeft + clientWidth >= scrollWidth - 10) {
+          scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          scroll('right');
+        }
+      }
+    }, 4000);
+
     return () => {
       if (element) observer.unobserve(element);
+      clearInterval(interval);
     };
   }, []);
 
@@ -134,10 +153,10 @@ export default function Menu() {
         </div>
 
         {/* Menu Items */}
-        <div className="relative">
+        <div className="relative px-12 md:px-16">
           <button
             onClick={() => scroll('left')}
-            className="absolute left-0 md:left-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm p-3 md:p-4 rounded-full shadow-xl hover:bg-white hover:scale-110 transition-all duration-300 flex items-center justify-center"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white/90 backdrop-blur-sm p-3 md:p-4 rounded-full shadow-xl hover:bg-white hover:scale-110 transition-all duration-300 flex items-center justify-center border border-calPoly-100"
             aria-label="Scroll left"
           >
             <svg className="w-6 h-6 text-calPoly-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -147,7 +166,7 @@ export default function Menu() {
 
           <button
             onClick={() => scroll('right')}
-            className="absolute right-0 md:right-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm p-3 md:p-4 rounded-full shadow-xl hover:bg-white hover:scale-110 transition-all duration-300 flex items-center justify-center"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white/90 backdrop-blur-sm p-3 md:p-4 rounded-full shadow-xl hover:bg-white hover:scale-110 transition-all duration-300 flex items-center justify-center border border-calPoly-100"
             aria-label="Scroll right"
           >
             <svg className="w-6 h-6 text-calPoly-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -157,13 +176,13 @@ export default function Menu() {
 
           <div
             ref={scrollRef}
-            className="flex gap-6 md:gap-8 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-8 px-4 md:px-0"
+            className="flex gap-4 md:gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-8"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {menuItems.map((item, index) => (
               <div
                 key={index}
-                className={`flex-none w-[85vw] sm:w-96 snap-center group ${isVisible ? 'animate-fade-up' : 'opacity-0'}`}
+                className={`flex-none w-[85vw] sm:w-[calc((100%-32px)/2)] lg:w-[calc((100%-48px)/3)] snap-center group ${isVisible ? 'animate-fade-up' : 'opacity-0'}`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 h-full flex flex-col">
@@ -208,14 +227,26 @@ export default function Menu() {
             <p className="font-body text-lg text-papaya-100 mb-6 leading-relaxed">
               Experience the transformative power of pure, whole plant-based nutrition crafted with love and intention.
             </p>
-            {/* 4. Button background changed to papaya, text to dark */}
-            <Link
-              to="/menu"
-              className="inline-flex items-center gap-3 bg-papaya text-calPoly-700 font-body font-semibold text-lg px-8 py-4 rounded-full hover:bg-papaya-100 transition-all duration-300 hover:scale-105 shadow-lg"
-            >
-              <span>Start Your Journey</span>
-              <ArrowRight className="w-5 h-5" />
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="https://wa.me/919667899233"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 bg-papaya text-calPoly-700 font-body font-semibold text-lg px-8 py-4 rounded-full hover:bg-papaya-100 transition-all duration-300 hover:scale-105 shadow-lg"
+              >
+                <span>Start Your Journey</span>
+                <ArrowRight className="w-5 h-5" />
+              </a>
+              <a
+                href="/Detailed Menu.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 bg-transparent text-papaya border-2 border-papaya font-body font-semibold text-lg px-8 py-4 rounded-full hover:bg-papaya hover:text-calPoly-700 transition-all duration-300 hover:scale-105 shadow-lg"
+              >
+                <span>Detailed Menu</span>
+                <ArrowRight className="w-5 h-5" />
+              </a>
+            </div>
           </div>
         </div>
       </div>

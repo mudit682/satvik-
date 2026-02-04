@@ -6,7 +6,7 @@ const images = [
   '/menu images/menu IMG/menu2/Garden Blossom Salad.jpg',
   '/menu images/menu IMG/menu2/Jau-Dropping Bowl.jpg',
   '/menu images/menu IMG/menu2/Green Glow Elixir.jpg',
-  '/menu images/menu IMG/menu images/blissballs.png'
+  '/menu images/menu IMG/menu2/Bliss Balls.jpg'
 ];
 
 
@@ -86,19 +86,19 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
           {/* Text Content */}
           <div className={`space-y-8 ${isVisible ? 'animate-slide-in-left' : 'opacity-0'}`}>
-            <div className="space-y-6 font-body text-calPoly-600 text-lg leading-relaxed">
-              <div className="bg-citron-50 backdrop-blur-sm p-6 rounded-2xl border border-citron-100 shadow-lg">
+            <div className="space-y-6 font-body text-calPoly-700 text-lg leading-relaxed">
+              <div className="bg-papaya/50 backdrop-blur-sm p-6 rounded-2xl border border-papaya-200 shadow-lg">
                 <p className="mb-4">
-                  Derived from the Sanskrit word <span className="italic font-medium text-hunter-600">"Satv"</span> meaning <span className="font-semibold text-hunter-600">purity</span> and <span className="italic font-medium text-hunter-600">"fy"</span> meaning <span className="font-semibold text-hunter-600">fulfillment</span>, Satvify embodies our commitment to satisfying hunger & taste buds with Satvic food.
+                  Derived from the Sanskrit word "Satv" meaning purity and "fy" meaning fulfillment, Satvify embodies our commitment to satisfying hunger & taste buds with Satvic food.
                 </p>
                 <p>
-                  At Satvify, every meal is a promise of <span className="font-semibold text-hunter-600">farm-to-table freshness</span>. We believe food should heal, energize, and uplift, not just fill you up.
+                  At Satvify, every meal is a promise of farm-to-table freshness. We believe food should heal, energize, and uplift, not just fill you up.
                 </p>
               </div>
 
-              <div className="bg-papaya box-shadow-xl p-6 rounded-2xl border border-papaya-200 shadow-lg">
-                <p>
-                  Every recipe we create is rooted in Satvic principles: <span className="font-semibold text-hunter-600">fresh, plant-based, wholesome, and easy to digest</span>. With a deep respect for nature and balance, Satvify is here to help you "eat clean, live light, and feel alive."
+              <div className="bg-papaya/50 backdrop-blur-sm p-6 rounded-2xl border border-papaya-200 shadow-lg">
+                <p className="italic">
+                  "Every recipe we create is rooted in Satvic principles: fresh, plant-based, wholesome, and easy to digest. With a deep respect for nature and balance, Satvify is here to help you 'eat clean, live light, and feel alive.'"
                 </p>
               </div>
             </div>

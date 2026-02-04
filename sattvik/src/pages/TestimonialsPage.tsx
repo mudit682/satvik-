@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { Star, Quote, Heart, Users, Trophy, MessageSquare, Send, Sprout, ThumbsUp, Utensils, Package } from 'lucide-react';
+import { Star, Quote, Heart, Users, Send, Sprout, ThumbsUp, Utensils } from 'lucide-react';
 
 type Testimonial = {
   name: string;
@@ -18,7 +18,7 @@ const testimonials: Testimonial[] = [
     location: 'Gurgaon',
     quote: 'Quantity was appropriate and taste was so nice. It was good and sweetness was perfect. Overall food was good.',
     favorite: 'Satvic Thali',
-    image: '/Testimonials/manju.jpg',
+    image: '/Testimonials/IMG_3872 - Manju Gupta.jpeg',
     rating: 4.5,
     monthsWithUs: 2,
   },
@@ -36,14 +36,14 @@ const testimonials: Testimonial[] = [
     location: 'Gurgaon',
     quote: 'I like your Garden Blossom Salad Bowl 🥗. It is in perfect quantity for one person. Packing also good.',
     favorite: 'Garden Blossom Salad',
-    image: 'https://cdn.vectorstock.com/i/1000v/44/88/simple-male-avatar-icon-vector-58404488.jpg',
+    image: 'https://i.fbcd.co/products/resized/resized-750-500/1806-m10-i002-n009-e06p-91a842e4e10f8d9d10795231b8f778bee243808b34e3409ad18e05a7bc04cae6.jpg',
     rating: 5,
     monthsWithUs: 1,
   },
   {
     name: 'Akshay Kumar Yadav',
     location: 'Gurgaon',
-    quote: 'Healthy yummy meal. Very delicious healthy meal😋',
+    quote: 'Healthy yummy meal. Very delicious healthy meal😋.',
     favorite: 'Satvic Meals',
     image: '/Testimonials/akshay.jpg',
     rating: 5,
@@ -52,7 +52,7 @@ const testimonials: Testimonial[] = [
   {
     name: 'Tania',
     location: 'Gurgaon',
-    quote: 'The salad was so fresh and delectable with the healthiest possible ingredients. really really loved it 💕 thank you so much',
+    quote: 'The salad was so fresh and delectable with the healthiest possible ingredients. really really loved it 💕 thank you so much.',
     favorite: 'Fresh Salad',
     image: 'https://i.fbcd.co/products/resized/resized-750-500/1806-m10-i002-n009-e14p-8bbc2507800e9178d5464d9cee53017a51fe88a31e1251c02165ab75b4e8d5ef.jpg',
     rating: 5,
@@ -117,16 +117,16 @@ const testimonials: Testimonial[] = [
     location: 'Gurgaon',
     quote: 'I was very happy and satisfied with the meal. It was really delicious and filling i couldn\'t believe that a salad can also be so tasty!',
     favorite: 'Garden Blossom Salad',
-    image: '/Testimonials/nodp.jpeg',
+    image: '/Testimonials/manju.jpg',
     rating: 5,
     monthsWithUs: 1,
   },
   {
     name: 'Akansha Gupta',
     location: 'Gurgaon',
-    quote: 'It was quite chocolaty and yummy which is good for kids. Overall sweetness and calories count could be improved',
+    quote: 'It was quite chocolaty and yummy which is good for kids. Overall sweetness and calories count could be improved.',
     favorite: 'Choco Loco Smoothie',
-    image: '/Testimonials/akansha.jpg',
+    image: '/Testimonials/nodp.jpeg',
     rating: 4,
     monthsWithUs: 1,
   },
@@ -190,7 +190,7 @@ export default function TestimonialsPage() {
 
           {/* Trust Stats */}
           {/* --- FIX 2 & 3: Card bg changed to 'bg-papaya', icon bg to 'bg-calPoly-700' --- */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 mt-12 max-w-6xl mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 mt-12 max-w-7xl mx-auto">
             <div className="bg-papaya p-6 rounded-2xl shadow-lg text-center">
               <div className="w-12 h-12 bg-calPoly-700 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <Users className="w-6 h-6 text-white" />
@@ -200,31 +200,17 @@ export default function TestimonialsPage() {
             </div>
             <div className="bg-papaya p-6 rounded-2xl shadow-lg text-center">
               <div className="w-12 h-12 bg-calPoly-700 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Trophy className="w-6 h-6 text-white" />
+                <ThumbsUp className="w-6 h-6 text-white" />
               </div>
               <div className="text-2xl font-heading font-bold text-calPoly-700 mb-1">95%</div>
               <div className="font-body text-calPoly-600">Would Recommend</div>
             </div>
             <div className="bg-papaya p-6 rounded-2xl shadow-lg text-center">
               <div className="w-12 h-12 bg-calPoly-700 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <MessageSquare className="w-6 h-6 text-white" />
+                <Sprout className="w-6 h-6 text-white" />
               </div>
               <div className="text-2xl font-heading font-bold text-calPoly-700 mb-1">98%</div>
               <div className="font-body text-calPoly-600">appreciated freshness</div>
-            </div>
-            <div className="bg-papaya p-6 rounded-2xl shadow-lg text-center">
-              <div className="w-12 h-12 bg-calPoly-700 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Sprout className="w-6 h-6 text-white" />
-              </div>
-              <div className="text-2xl font-heading font-bold text-calPoly-700 mb-1">90%</div>
-              <div className="font-body text-calPoly-600">Farm-Fresh</div>
-            </div>
-            <div className="bg-papaya p-6 rounded-2xl shadow-lg text-center">
-              <div className="w-12 h-12 bg-calPoly-700 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <ThumbsUp className="w-6 h-6 text-white" />
-              </div>
-              <div className="text-2xl font-heading font-bold text-calPoly-700 mb-1">87%</div>
-              <div className="font-body text-calPoly-600">Highly Recommended</div>
             </div>
             <div className="bg-papaya p-6 rounded-2xl shadow-lg text-center">
               <div className="w-12 h-12 bg-calPoly-700 rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -232,13 +218,6 @@ export default function TestimonialsPage() {
               </div>
               <div className="text-2xl font-heading font-bold text-calPoly-700 mb-1">86%</div>
               <div className="font-body text-calPoly-600">Irresistible Taste</div>
-            </div>
-            <div className="bg-papaya p-6 rounded-2xl shadow-lg text-center">
-              <div className="w-12 h-12 bg-calPoly-700 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Package className="w-6 h-6 text-white" />
-              </div>
-              <div className="text-2xl font-heading font-bold text-calPoly-700 mb-1">84%</div>
-              <div className="font-body text-calPoly-600">Loved Packaging</div>
             </div>
             <div className="bg-papaya p-6 rounded-2xl shadow-lg text-center">
               <div className="w-12 h-12 bg-calPoly-700 rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -289,16 +268,16 @@ export default function TestimonialsPage() {
       {/* CTA */}
       <section className="py-16">
         <div className="container mx-auto px-6">
-          <div className="bg-white/80 backdrop-blur-sm p-8 rounded-3xl border border-hunter-200/50 max-w-4xl mx-auto text-center shadow-lg">
-            <h3 className="font-heading text-3xl font-bold text-calPoly-700 mb-4">
+          <div className="bg-calPoly-700 p-8 rounded-3xl max-w-4xl mx-auto text-center shadow-lg">
+            <h3 className="font-heading text-3xl font-bold text-white mb-4">
               Share Your Satvify Story
             </h3>
-            <p className="font-body text-lg text-calPoly-600 mb-6 leading-relaxed">
+            <p className="font-body text-lg text-papaya-100 mb-6 leading-relaxed">
               Your journey inspires others to choose purity and presence. Tell us how clean eating changed your day.
             </p>
             <button
               onClick={handleWriteReview}
-              className="inline-flex items-center gap-3 bg-gradient-to-r from-hunter-600 to-hunter-700 text-white font-body font-semibold text-lg px-8 py-4 rounded-full hover:from-hunter-700 hover:to-hunter-800 transition-all duration-300 hover:scale-105 shadow-lg"
+              className="inline-flex items-center gap-3 bg-papaya text-calPoly-700 font-body font-semibold text-lg px-8 py-4 rounded-full hover:bg-papaya-100 transition-all duration-300 hover:scale-105 shadow-lg"
             >
               <span>Write a Review</span>
               <Heart className="w-5 h-5" />

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Filter, Search, ArrowRight } from 'lucide-react'; // Added ArrowRight
+import { Filter, Search, ArrowRight } from 'lucide-react';
 import USPIcons from '../components/USPIcons';
 
 // Menu items array (sweets)
@@ -85,7 +85,7 @@ const menuItems = [
     image: '/menu images/menu IMG/menu2/Jau-Dropping Bowl.jpg',
     prepTime: '10 min',
     rating: 4.9,
-    category: 'Smoothies',
+    category: 'Salads',
     ingredients: ['Barley', 'Nut Butter', 'Seasonal Fruit', 'Honey'],
     benefits: ['Slow Energy', 'Fiber Rich', 'Weight Management'],
     isVegan: false,
@@ -99,7 +99,7 @@ const menuItems = [
     image: '/menu images/menu IMG/menu2/Protein Punch Bowl.jpg',
     prepTime: '12 min',
     rating: 5.0,
-    category: 'Smoothies',
+    category: 'Salads',
     ingredients: ['Sattu', 'Sprouts', 'Nuts', 'Jaggery'],
     benefits: ['Muscle Recovery', 'Sustained Energy', 'High Protein'],
     isVegan: true,
@@ -113,7 +113,7 @@ const menuItems = [
     image: '/menu images/menu IMG/menu2/Banana Bliss Shake.jpg',
     prepTime: '5 min',
     rating: 4.8,
-    category: 'Smoothies',
+    category: 'Drinks',
     ingredients: ['Banana', 'Almond Milk', 'Dates', 'Cinnamon'],
     benefits: ['Hydration', 'Potassium', 'Naturally Sweet'],
     isVegan: true,
@@ -219,6 +219,21 @@ const menuItems = [
     isVegan: true,
     isGlutenFree: true
   },
+  {
+    name: 'Royal Thandai',
+    description: 'A cooling festive blend of almonds, fennel, & poppy seeds, featuring a delicate flavor balanced with dates, jaggery, cardamom powder, pepper, & rock salt. Blended with coconut milk, garnished with pistachio, saffron, & rose petals.',
+    calories: 220,
+    price: '₹89',
+    image: '/menu images/menu IMG/menu images/Royal Thandai.jpg',
+    prepTime: '10 min',
+    rating: 5.0,
+    category: 'Drinks',
+    ingredients: ['Almonds', 'Coconut Milk', 'Saffron', 'Pistachios'],
+    benefits: ['Cooling', 'Festive', 'Rich Nutrients'],
+    isVegan: true,
+    isGlutenFree: true
+  },
+
 
   // --- DESSERTS & SWEETS ---
   {
@@ -226,7 +241,7 @@ const menuItems = [
     description: 'A ball made with almonds, seedless dates, dry coconut powder, cacao powder, cinnamon powder, jaggery powder, chia seeds, & a pinch of rock salt. Rolled in a decorative mix of almonds, pistachios, white sesame seeds, & poppy seeds for a wholesome, nutrient-rich treat.',
     calories: 120,
     price: '₹49',
-    image: '/menu images/menu IMG/menu images/blissballs.png',
+    image: '/menu images/menu IMG/menu2/Bliss Balls.jpg',
     prepTime: '5 min',
     rating: 4.9,
     category: 'Desserts',
@@ -240,7 +255,7 @@ const menuItems = [
     description: 'A luscious fusion of creamy cashews, earthy jaggery, and bold cacao, uplifted by vanilla, rock salt, and smooth coconut oil — pure indulgence, naturally crafted.',
     calories: 160,
     price: '₹69',
-    image: '/menu images/menu IMG/menu images/nuttychocomeltz.png',
+    image: '/menu images/Nutty Choco Meltz.png',
     prepTime: '10 min',
     rating: 5.0,
     category: 'Desserts',
@@ -268,7 +283,7 @@ const menuItems = [
     description: 'A crunchy celebration of peanuts, almonds, cashews & white sesame seeds powder, bound together with jaggery & a swirl of almond butter, then kissed with fennel & cardamom for a spiced, nostalgic crunch. Just a splash of water, & it\'s magic.',
     calories: 130,
     price: '₹39',
-    image: '/menu images/menu IMG/menu images/trinuttilbites.png',
+    image: '/menu images/menu IMG/menu2/Trinut Til Bites.jpg',
     prepTime: '5 min',
     rating: 4.7,
     category: 'Desserts',
@@ -278,11 +293,11 @@ const menuItems = [
     isGlutenFree: true
   },
   {
-    name: 'Choco Truffle Eclairs',
+    name: 'Chocolate Truffle Eclairs',
     description: 'Almond chunks infused with soft dates, cloaked in a luscious chocolate-cashew sauce spun from coconut oil, jaggery, cacao, vanilla, & a dash of rock salt. Drizzled with creamy peanut butter. It\'s not just a treat — it\'s a bite-sized cosmic event.',
     calories: 150,
     price: '₹69',
-    image: '/menu images/menu IMG/menu images/chocotruffleeclairs.png',
+    image: '/menu images/menu IMG/menu2/Chocolate Truffle Eclairs (2).jpg',
     prepTime: '10 min',
     rating: 4.9,
     category: 'Desserts',
@@ -296,7 +311,7 @@ const menuItems = [
     description: 'Earthy sattu, sweet dates, & vibrant beetroot juice come together in this soft, spiced treat. Flavored with cardamom, crowned with pistachios, & finished with delicate rose petals — it\'s tradition, reimagined in pink.',
     calories: 110,
     price: '₹29',
-    image: '/menu images/menu IMG/menu images/proteinpeda.png',
+    image: '/menu images/menu IMG/menu2/Protein Peda.jpg',
     prepTime: '5 min',
     rating: 4.8,
     category: 'Desserts',
@@ -310,7 +325,7 @@ const menuItems = [
     description: 'Creamy cashews meet the earthy sweetness of jaggery powder, finished with a touch of luxury in silver vark — a classic indulgence with a royal flair.',
     calories: 140,
     price: '₹39',
-    image: '/menu images/menu IMG/menu images/royalkajukatli.png',
+    image: '/menu images/kaju katli.png',
     prepTime: '10 min',
     rating: 4.9,
     category: 'Desserts',
@@ -320,11 +335,11 @@ const menuItems = [
     isGlutenFree: true
   },
   {
-    name: 'Shahi Anjeer Roll',
+    name: 'Anjeer Rolls',
     description: 'A rich blend of nature\'s sweets and nuts — figs, seedless dates, raisins, and crunchy almonds, pistachios, and cashews, lightly moistened with water and sprinkled with poppy seeds for a wholesome, energizing treat.',
     calories: 150,
     price: '₹39',
-    image: '/menu images/menu IMG/menu images/shahianjeerrolls.png',
+    image: '/menu images/menu IMG/menu2/Anjeer Rolls.png',
     prepTime: '10 min',
     rating: 4.8,
     category: 'Desserts',
@@ -334,11 +349,11 @@ const menuItems = [
     isGlutenFree: true
   },
   {
-    name: 'Date Chocolate Barks',
+    name: 'Date Chocolate Bites',
     description: 'Fudgy dates, jaggery, & cacao swirled with coconut oil, finished with a cheeky pinch of rock salt. Sweet, salty, & sinfully good — no non-sense, no guilt.',
     calories: 130,
     price: '₹39',
-    image: '/menu images/menu IMG/menu images/datechocolatebarks.png',
+    image: '/menu images/menu IMG/menu2/Date Chocolate Bites.png',
     prepTime: '5 min',
     rating: 4.9,
     category: 'Desserts',
@@ -355,7 +370,7 @@ const menuItems = [
     image: '/menu images/menu IMG/menu2/Chia-licious Pudding.jpg',
     prepTime: '10 min',
     rating: 4.7,
-    category: 'Desserts',
+    category: 'Smoothies',
     ingredients: ['Chia Seeds', 'Coconut Milk', 'Berries', 'Honey'],
     benefits: ['Omegas', 'Skin Health', 'Fullness'],
     isVegan: false,
@@ -369,7 +384,7 @@ const menuItems = [
     image: '/menu images/menu IMG/menu2/Choco Loco Carnival.jpg',
     prepTime: '12 min',
     rating: 4.9,
-    category: 'Desserts',
+    category: 'Smoothies',
     ingredients: ['Cacao', 'Dates', 'Nuts', 'Banana'],
     benefits: ['Mood Lifter', 'Antioxidants', 'Healthy Sweet'],
     isVegan: true,
@@ -383,7 +398,7 @@ const menuItems = [
     image: '/menu images/menu IMG/menu2/Kesar-e-Pista Bowl.jpg',
     prepTime: '15 min',
     rating: 5.0,
-    category: 'Desserts',
+    category: 'Smoothies',
     ingredients: ['Saffron (Kesar)', 'Pistachio', 'Coconut Cream', 'Dates'],
     benefits: ['Heart Health', 'Iron', 'Luxury Experience'],
     isVegan: true,
@@ -397,7 +412,7 @@ const menuItems = [
     image: '/menu images/menu IMG/menu2/The Sweet Beet Treat.jpg',
     prepTime: '20 min',
     rating: 4.6,
-    category: 'Desserts',
+    category: 'Salads',
     ingredients: ['Beetroot', 'Cashews', 'Jaggery', 'Coconut Milk'],
     benefits: ['Iron Boost', 'Liver Detox', 'Rich Taste'],
     isVegan: true,
@@ -418,8 +433,6 @@ const menuItems = [
     isGlutenFree: true
   }
 ];
-
-const categories = ['All', 'Signature', 'Salads', 'Smoothies', 'Drinks', 'Desserts'];
 
 export default function MenuProductsPage() {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -455,7 +468,7 @@ export default function MenuProductsPage() {
         FIX 1: Background changed to bg-white 
         FIX 2: Bottom padding changed from pb-24 to pb-16
       --- */}
-      <section className="pt-32 pb-16 bg-white relative overflow-hidden">
+      <section className="pt-32 pb-4 bg-white relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute top-20 left-10 animate-float opacity-20">
           <div className="w-40 h-40 bg-gradient-to-br from-hunter-200/40 to-calPoly-300/30 rounded-full blur-3xl" />
@@ -466,12 +479,12 @@ export default function MenuProductsPage() {
 
         <div className="container mx-auto px-6 relative z-10">
           {/* --- FIX 3: Bottom margin changed from mb-16 to mb-12 --- */}
-          <div className="text-left mb-12">
+          <div className="text-center mb-0">
             <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-calPoly-700 mb-6 leading-tight">
               Menu
             </h1>
 
-            <p className="font-body text-xl text-calPoly-600 max-w-4xl leading-relaxed">
+            <p className="font-body text-xl text-calPoly-600 max-w-4xl mx-auto leading-relaxed">
               Every dish is crafted with <span className="font-semibold text-hunter-600">intention</span> and <span className="font-semibold text-hunter-600">love</span>,
               using only the purest ingredients to create meals that heal, energize, and bring joy to your daily nourishment journey.
             </p>
@@ -480,7 +493,7 @@ export default function MenuProductsPage() {
       </section>
 
       {/* USPs Section */}
-      <section className="py-8 bg-white overflow-hidden">
+      <section className="pb-8 pt-0 bg-white overflow-hidden">
         <div className="container mx-auto px-6">
           <USPIcons />
         </div>
@@ -502,25 +515,31 @@ export default function MenuProductsPage() {
               />
             </div>
 
-            {/* Category Filter */}
-            <div className="flex flex-wrap gap-3">
-              {categories.map((category) => (
+            {/* Category Filter with Filter Icon */}
+            <div className="flex flex-wrap gap-3 items-center">
+              <Filter className="w-5 h-5 text-calPoly-600" />
+              {[
+                { id: 'All', label: 'All' },
+                { id: 'Salads', label: 'Salads' },
+                { id: 'Smoothies', label: 'Smoothies' },
+                { id: 'Drinks', label: 'Drinks' },
+                { id: 'Desserts', label: 'Desserts' }
+              ].map((category) => (
                 <button
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
-                  className={`px-6 py-3 rounded-full font-body font-semibold transition-all duration-300 ${selectedCategory === category
+                  key={category.id}
+                  onClick={() => setSelectedCategory(category.id)}
+                  className={`px-6 py-3 rounded-full font-body font-semibold transition-all duration-300 ${selectedCategory === category.id
                     ? 'bg-hunter-600 text-white shadow-lg'
                     : 'bg-white/80 text-calPoly-600 hover:bg-hunter-50 hover:text-hunter-700 border border-hunter-200'
                     }`}
                 >
-                  {category}
+                  {category.label}
                 </button>
               ))}
             </div>
 
             {/* Sort */}
             <div className="flex items-center gap-3">
-              <Filter className="w-5 h-5 text-calPoly-600" />
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
@@ -609,13 +628,24 @@ export default function MenuProductsPage() {
                 Experience the transformative power of pure, plant-based nutrition crafted with love and intention.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button
-                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                <a
+                  href="https://wa.me/919667899233"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 bg-papaya text-calPoly-700 font-body font-semibold text-lg px-8 py-4 rounded-full hover:bg-papaya-100 transition-all duration-300 hover:scale-105 shadow-lg"
                 >
                   <span>Start Your Journey</span>
                   <ArrowRight className="w-5 h-5" />
-                </button>
+                </a>
+                <a
+                  href="/Detailed Menu.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 bg-transparent text-papaya border-2 border-papaya font-body font-semibold text-lg px-8 py-4 rounded-full hover:bg-papaya hover:text-calPoly-700 transition-all duration-300 hover:scale-105 shadow-lg"
+                >
+                  <span>Detailed Menu</span>
+                  <ArrowRight className="w-5 h-5" />
+                </a>
               </div>
             </div>
           </div>

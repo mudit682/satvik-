@@ -202,10 +202,26 @@ export default function WhyChoose() {
             <p className="font-body text-lg text-calPoly-600 mb-6 leading-relaxed">
               Join hundreds of satisfied customers who have transformed their health and well-being with our pure, plant-based meals.
             </p>
-            <button className="inline-flex items-center gap-3 bg-gradient-to-r from-hunter-600 to-hunter-700 text-white font-body font-semibold text-lg px-8 py-4 rounded-full hover:from-hunter-700 hover:to-hunter-800 transition-all duration-300 hover:scale-105 shadow-lg">
-              <span>Start Your Journey</span>
-              <ArrowRight className="w-5 h-5" />
-            </button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="https://wa.me/919667899233"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 bg-gradient-to-r from-hunter-600 to-hunter-700 text-white font-body font-semibold text-lg px-8 py-4 rounded-full hover:from-hunter-700 hover:to-hunter-800 transition-all duration-300 hover:scale-105 shadow-lg"
+              >
+                <span>Start Your Journey</span>
+                <ArrowRight className="w-5 h-5" />
+              </a>
+              <a
+                href="/Detailed Menu.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 bg-transparent text-hunter-700 border-2 border-hunter-700 font-body font-semibold text-lg px-8 py-4 rounded-full hover:bg-hunter-700 hover:text-white transition-all duration-300 hover:scale-105 shadow-lg"
+              >
+                <span>Detailed Menu</span>
+                <ArrowRight className="w-5 h-5" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
