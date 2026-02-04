@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ShoppingBag, Users } from 'lucide-react';
-import { Link } from 'react-router-dom';
+
 
 export default function CallToAction() {
   const [isVisible, setIsVisible] = useState(false);
@@ -61,13 +61,15 @@ export default function CallToAction() {
             <span>Order Now</span>
           </a>
 
-          <Link
-            to="/testimonials"
+          <a
+            href="https://wa.me/919667899233"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group relative inline-flex items-center gap-3 px-10 py-5 bg-transparent border-2 border-hunter-600 text-hunter-600 font-body font-bold text-lg rounded-full hover:bg-hunter-600 hover:text-white transition-all duration-300 hover:scale-105 shadow-2xl"
           >
             <Users className="w-6 h-6 group-hover:scale-110 transition-transform" />
             <span>Join Our Community</span>
-          </Link>
+          </a>
         </div>
 
       </div>
