@@ -153,10 +153,10 @@ export default function Menu() {
         </div>
 
         {/* Menu Items */}
-        <div className="relative px-12 md:px-16">
+        <div className="relative -mx-6 md:mx-0 px-0 md:px-16">
           <button
             onClick={() => scroll('left')}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white/90 backdrop-blur-sm p-3 md:p-4 rounded-full shadow-xl hover:bg-white hover:scale-110 transition-all duration-300 flex items-center justify-center border border-calPoly-100"
+            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white/90 backdrop-blur-sm p-3 md:p-4 rounded-full shadow-xl hover:bg-white hover:scale-110 transition-all duration-300 items-center justify-center border border-calPoly-100"
             aria-label="Scroll left"
           >
             <svg className="w-6 h-6 text-calPoly-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -166,7 +166,7 @@ export default function Menu() {
 
           <button
             onClick={() => scroll('right')}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white/90 backdrop-blur-sm p-3 md:p-4 rounded-full shadow-xl hover:bg-white hover:scale-110 transition-all duration-300 flex items-center justify-center border border-calPoly-100"
+            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white/90 backdrop-blur-sm p-3 md:p-4 rounded-full shadow-xl hover:bg-white hover:scale-110 transition-all duration-300 items-center justify-center border border-calPoly-100"
             aria-label="Scroll right"
           >
             <svg className="w-6 h-6 text-calPoly-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -176,7 +176,7 @@ export default function Menu() {
 
           <div
             ref={scrollRef}
-            className="flex gap-4 md:gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-8"
+            className="flex gap-4 md:gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-8 px-6 md:px-0"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {menuItems.map((item, index) => (

@@ -126,7 +126,7 @@ const testimonials: Testimonial[] = [
     location: 'Gurgaon',
     quote: 'It was quite chocolaty and yummy which is good for kids. Overall sweetness and calories count could be improved.',
     favorite: 'Choco Loco Smoothie',
-    image: '/Testimonials/nodp.jpeg',
+    image: 'https://i.fbcd.co/products/resized/resized-750-500/1806-m10-i002-n009-e14p-8bbc2507800e9178d5464d9cee53017a51fe88a31e1251c02165ab75b4e8d5ef.jpg',
     rating: 4,
     monthsWithUs: 1,
   },
