@@ -5,7 +5,7 @@ import { Star, ChevronLeft, ChevronRight, Quote, Users, ThumbsUp, Sprout, Utensi
 const testimonials = [
   {
     name: 'Manju Gupta',
-    image: '/Testimonials/manju.jpg',
+    image: '/Testimonials/IMG_3872 - Manju Gupta.jpeg',
     text: 'Thali amount was appropriate and taste was so nice. It was good and sweetness was perfect. Overall food was good.',
     rating: 4.5,
   },
@@ -17,7 +17,7 @@ const testimonials = [
   },
   {
     name: 'Ramesh Poonia',
-    image: 'https://cdn.vectorstock.com/i/1000v/44/88/simple-male-avatar-icon-vector-58404488.jpg',
+    image: 'https://i.fbcd.co/products/resized/resized-750-500/1806-m10-i002-n009-e06p-91a842e4e10f8d9d10795231b8f778bee243808b34e3409ad18e05a7bc04cae6.jpg',
     text: 'I like your Garden Blossom Salad Bowl 🥗. It is in perfect quantity for one person. Packing also good.',
     rating: 5,
   },
@@ -124,7 +124,7 @@ export default function Testimonials() {
                     <img
                       src={testimonials[currentIndex].image}
                       alt={testimonials[currentIndex].name}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover scale-125"
                     />
                   </div>
                   <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-gradient-to-br from-hunter-500 to-calPoly-600 rounded-full flex items-center justify-center shadow-lg">

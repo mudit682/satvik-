@@ -62,7 +62,7 @@ export default function CallToAction() {
           </a>
 
           <a
-            href="https://wa.me/919667899233"
+            href="https://chat.whatsapp.com/CngRnbQuuZS6rxncl13iQn?mode=gi_t"
             target="_blank"
             rel="noopener noreferrer"
             className="group relative inline-flex items-center gap-3 px-10 py-5 bg-transparent border-2 border-hunter-600 text-hunter-600 font-body font-bold text-lg rounded-full hover:bg-hunter-600 hover:text-white transition-all duration-300 hover:scale-105 shadow-2xl"

@@ -39,14 +39,14 @@ const WhatWeDo: React.FC = () => {
     '/menu images/menu IMG/menu2/Exotic Cheesy Salad.jpg',
     '/menu images/menu IMG/menu2/Protein Punch Bowl.jpg',
     '/menu images/menu IMG/menu2/Khaas Coconut Chaas.jpg',
-    '/menu images/menu IMG/menu2/Chocolate Truffle Eclairs (2).jpg'
+    '/menu images/menu IMG/menu images/Ai pic.png'
   ];
 
   // Auto-change image logic
   React.useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 4000); // Change image every 4 seconds
+    }, 2500); // Change image every 2.5 seconds
     return () => clearInterval(interval);
   }, [images.length]);
 

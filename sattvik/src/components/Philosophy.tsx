@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Sprout, Droplets, RotateCw, Wheat, Vegan, Recycle, Sparkles } from 'lucide-react';
+import { Sprout, Droplets, Repeat, Wheat, Vegan, Recycle, Sparkles } from 'lucide-react';
 
 const philosophies = [
   {
@@ -165,7 +165,7 @@ export default function Philosophy() {
                       </p>
                       <div className="flex items-center gap-2 text-hunter-600 font-body font-semibold hover:text-hunter-700 transition-colors">
                         <span>Know more</span>
-                        <RotateCw className="w-4 h-4 group-hover:rotate-180 transition-transform duration-500" />
+                        <Repeat className="w-4 h-4 group-hover:rotate-180 transition-transform duration-500" />
                       </div>
                     </div>
 

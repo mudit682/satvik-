@@ -126,7 +126,7 @@ const testimonials: Testimonial[] = [
     location: 'Gurgaon',
     quote: 'It was quite chocolaty and yummy which is good for kids. Overall sweetness and calories count could be improved.',
     favorite: 'Choco Loco Smoothie',
-    image: 'https://i.fbcd.co/products/resized/resized-750-500/1806-m10-i002-n009-e14p-8bbc2507800e9178d5464d9cee53017a51fe88a31e1251c02165ab75b4e8d5ef.jpg',
+    image: '/Testimonials/nodp.jpeg',
     rating: 4,
     monthsWithUs: 1,
   },
@@ -210,7 +210,7 @@ export default function TestimonialsPage() {
                 <Sprout className="w-6 h-6 text-white" />
               </div>
               <div className="text-2xl font-heading font-bold text-calPoly-700 mb-1">98%</div>
-              <div className="font-body text-calPoly-600">appreciated freshness</div>
+              <div className="font-body text-calPoly-600">Appreciated freshness</div>
             </div>
             <div className="bg-papaya p-6 rounded-2xl shadow-lg text-center">
               <div className="w-12 h-12 bg-calPoly-700 rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -244,7 +244,9 @@ export default function TestimonialsPage() {
                   <p className="font-body text-calPoly-700 leading-relaxed mb-6 flex-grow">{t.quote}</p>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-4">
-                      <img src={t.image} alt={t.name} className="w-12 h-12 rounded-full object-cover" />
+                      <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
+                        <img src={t.image} alt={t.name} className="w-full h-full object-cover scale-125" />
+                      </div>
                       <div>
                         <div className="font-heading font-bold text-calPoly-700">{t.name}</div>
                       </div>

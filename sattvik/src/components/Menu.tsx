@@ -48,7 +48,7 @@ const menuItems = [
     description: 'Creamy cashews meet the earthy sweetness of jaggery powder, finished with a touch of luxury in silver vark — a classic indulgence with a royal flair.',
     calories: 140,
     price: '₹39',
-    image: '/menu images/kaju katli.png',
+    image: '/menu images/menu IMG/menu images/kaju katli silver.png',
     category: 'Desserts',
   },
   {
