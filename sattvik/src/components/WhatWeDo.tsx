@@ -1,6 +1,6 @@
 import React from 'react';
 // --- FIX 1: Imported Lucide icons ---
-import { Truck, Heart, BadgeCheck } from 'lucide-react';
+import { Truck, Heart, BadgeCheck, ChevronLeft, ChevronRight } from 'lucide-react';
 
 // 1. Define the props types for TypeScript
 interface FeatureCardProps {
@@ -39,7 +39,7 @@ const WhatWeDo: React.FC = () => {
     '/menu images/menu IMG/menu2/Exotic Cheesy Salad.jpg',
     '/menu images/menu IMG/menu2/Protein Punch Bowl.jpg',
     '/menu images/menu IMG/menu2/Khaas Coconut Chaas.jpg',
-    '/menu images/menu IMG/menu images/Ai pic.png'
+    '/menu images/menu IMG/menu images/kaju katli silver.png'
   ];
 
   // Auto-change image logic
@@ -50,8 +50,11 @@ const WhatWeDo: React.FC = () => {
     return () => clearInterval(interval);
   }, [images.length]);
 
+  const nextImage = () => setCurrentImageIndex((prev) => (prev + 1) % images.length);
+  const prevImage = () => setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
+
   const handleImageClick = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    nextImage();
   };
 
   return (
@@ -73,17 +76,43 @@ const WhatWeDo: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
 
           {/* Column 1: Image */}
-          <div className="relative h-[500px] md:h-[600px] rounded-3xl overflow-hidden shadow-2xl group cursor-pointer" onClick={handleImageClick}>
-            <img
-              src={images[currentImageIndex]}
-              alt={`Satvify wholesome meal ${currentImageIndex + 1}`}
-              className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
-            />
-            {/* Gradient Overlay for better text visibility (optional but good for consistency) */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+          <div className="relative h-[500px] md:h-[600px] rounded-3xl overflow-hidden shadow-2xl group cursor-pointer bg-white" onClick={handleImageClick}>
+            {images.map((img, idx) => (
+              <img
+                key={idx}
+                src={img}
+                alt={`Satvify wholesome meal ${idx + 1}`}
+                className={`absolute inset-0 w-full h-full object-cover transition-all duration-500 ${idx === currentImageIndex ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
+                  }`}
+              />
+            ))}
 
-            <div className="absolute bottom-6 right-6 bg-black/60 backdrop-blur-md text-white text-sm font-medium px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none border border-white/20">
-              Tap to see more
+            <button
+              onClick={(e) => { e.stopPropagation(); prevImage(); }}
+              className="absolute left-6 top-1/2 -translate-y-1/2 bg-white/90 backdrop-blur-sm p-3 rounded-full hover:bg-white transition-all duration-300 hover:scale-110 shadow-lg opacity-0 group-hover:opacity-100"
+              aria-label="Previous image"
+            >
+              <ChevronLeft className="w-6 h-6 text-calPoly-700" />
+            </button>
+
+            <button
+              onClick={(e) => { e.stopPropagation(); nextImage(); }}
+              className="absolute right-6 top-1/2 -translate-y-1/2 bg-white/90 backdrop-blur-sm p-3 rounded-full hover:bg-white transition-all duration-300 hover:scale-110 shadow-lg opacity-0 group-hover:opacity-100"
+              aria-label="Next image"
+            >
+              <ChevronRight className="w-6 h-6 text-calPoly-700" />
+            </button>
+
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3">
+              {images.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={(e) => { e.stopPropagation(); setCurrentImageIndex(idx); }}
+                  className={`h-2 rounded-full transition-all duration-300 ${idx === currentImageIndex ? 'bg-white w-8' : 'bg-white/50 w-2'
+                    }`}
+                  aria-label={`Go to image ${idx + 1}`}
+                />
+              ))}
             </div>
           </div>
 

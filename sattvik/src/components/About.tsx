@@ -39,7 +39,7 @@ export default function About() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 4000);
+    }, 2000);
     return () => clearInterval(interval);
   }, []);
 
@@ -114,7 +114,7 @@ export default function About() {
                   key={idx}
                   src={img}
                   alt={`Sattvik kitchen ${idx + 1}`}
-                  className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ${idx === currentImage ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
+                  className={`absolute inset-0 w-full h-full object-cover transition-all duration-500 ${idx === currentImage ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
                     }`}
                 />
               ))}

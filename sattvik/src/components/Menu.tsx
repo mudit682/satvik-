@@ -56,7 +56,7 @@ const menuItems = [
     description: 'A rich blend of nature\'s sweets and nuts — figs, seedless dates, raisins, and crunchy almonds, pistachios, and cashews, lightly moistened with water and sprinkled with poppy seeds for a wholesome, energy-treat.',
     calories: 150,
     price: '₹39',
-    image: '/menu images/menu IMG/menu2/Anjeer Rolls.png',
+    image: '/menu images/menu IMG/menu images/Shahi Anjeer Rolls (1).png',
     category: 'Desserts',
   },
   {

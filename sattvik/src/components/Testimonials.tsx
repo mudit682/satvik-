@@ -210,7 +210,7 @@ export default function Testimonials() {
               <Sprout className="w-6 h-6 text-white" />
             </div>
             <div className="text-2xl font-heading font-bold text-calPoly-700 mb-1">98%</div>
-            <div className="font-body text-calPoly-600 font-medium">Appreciated freshness</div>
+            <div className="font-body text-calPoly-600 font-medium">Appreciated Freshness</div>
           </div>
 
           <div className="bg-papaya p-6 rounded-2xl shadow-lg text-center group hover:shadow-xl transition-all duration-300">

@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 
 const uspIcons = [
-    { src: '/USPs/1.png', label: 'CLEAN & PURE\nNOTHING REFINED' },
-    { src: '/USPs/2.png', label: 'PLANT BASED' },
-    { src: '/USPs/3.png', label: 'REFINED SUGAR FREE' },
-    { src: '/USPs/4.png', label: 'ADDITIVE FREE' },
-    { src: '/USPs/5.png', label: 'REFINED OIL-FREE' },
-    { src: '/USPs/6.png', label: 'ECO FRIENDLY' }
+    { src: '/USPs/1.png', label: 'REFINED\nOIL-FREE' },
+    { src: '/USPs/2.png', label: 'Eco-FRIENDLY\nPACKAGING' },
+    { src: '/USPs/3.png', label: 'PLANT-BASED' },
+    { src: '/USPs/4.png', label: 'REFINED\nSUGAR-FREE' },
+    { src: '/USPs/5.png', label: 'ADDITIVE-FREE' },
+    { src: '/USPs/6.png', label: 'CLEAN\u00A0&\u00A0PURE\nNOTHING REFINED' }
 ];
 
 export default function USPIcons() {
@@ -30,9 +30,16 @@ export default function USPIcons() {
                                 alt={`Satvify USP ${index + 1}`}
                                 className="h-10 w-10 md:h-16 md:w-16 object-contain group-hover:scale-110 transition-transform duration-300 mix-blend-multiply"
                             />
-                            <span className="text-[10px] md:text-xs font-heading font-bold text-calPoly-700 leading-tight uppercase whitespace-pre-line text-center group-hover:text-hunter-600 transition-colors">
-                                {icon.label}
-                            </span>
+                            <div className="flex flex-col items-center">
+                                {icon.label.split('\n').map((line, i) => (
+                                    <span
+                                        key={i}
+                                        className="text-[10px] md:text-xs font-heading font-bold text-calPoly-700 leading-tight uppercase text-center group-hover:text-hunter-600 transition-colors whitespace-nowrap"
+                                    >
+                                        {line}
+                                    </span>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 ))}
