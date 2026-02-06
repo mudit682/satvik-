@@ -217,8 +217,8 @@ export default function Testimonials() {
             <div className="w-12 h-12 bg-calPoly-700 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
               <Utensils className="w-6 h-6 text-white" />
             </div>
-            <div className="text-2xl font-heading font-bold text-calPoly-700 mb-1">86%</div>
-            <div className="font-body text-calPoly-600 font-medium">Irresistible Taste</div>
+            <div className="text-2xl font-heading font-bold text-calPoly-700 mb-1">99%</div>
+            <div className="font-body text-calPoly-600 font-medium">Loved Taste</div>
           </div>
 
           <div className="bg-papaya p-6 rounded-2xl shadow-lg text-center group hover:shadow-xl transition-all duration-300">
